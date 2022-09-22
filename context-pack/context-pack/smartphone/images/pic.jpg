@@ -1,0 +1,92 @@
+   {
+        if(id < 0)
+        {
+            return null;
+        }
+        else
+        {
+            String sql = "SELECT * FROM PACIENTES WHERE ID = "+id;
+            Conecta con = new Conecta();
+            ResultSet rs = con.consulta(sql);
+            try {
+                if(rs.next())
+                {
+                    Paciente p = new Paciente();
+                    p.setId(id);
+                    p.setNome(rs.getString("NOME"));
+                    p.setCpf(rs.getString("CPF"));
+                    p.setRua(rs.getString("RUA"));
+                    p.setNumero(rs.getInt("NUMERO"));
+                    p.setBairro(rs.getString("BAIRRO"));
+                    p.setCidade(rs.getString("CIDADE"));
+                    p.setEstado(rs.getString("ESTADO"));
+                    p.setCep(rs.getString("CEP"));
+                    p.setCod_externo(rs.getInt("COD_EXTERNO"));
+                    p.setData(LocalDate.parse(rs.getString("DATA_CADASTRO"), Patterns.DdMMyyyy_dash()));
+                    p.setHora(LocalTime.parse(rs.getString("HORA_CADASTRO"),Patterns.HHmm_spots()));
+                    con.Desconecta();
+                    return p;
+                }
+                else
+                {
+                    return null;
+                }
+            } catch (SQLException ex) {
+                con.Desconecta();
+                Logger.getLogger(Plano.class.getName()).log(Level.SEVERE, null, ex);
+                return null;
+            }
+        }
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public String getCpf() {
+        return cpf;
+    }
+
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
+    }
+
+    public String getRua() {
+        return rua;
+    }
+
+    public void setRua(String rua) {
+        this.rua = rua;
+    }
+
+    public int getNumero() {
+        return numero;
+    }
+
+    public void setNumero(int numero) {
+        this.numero = numero;
+    }
+
+    public String getBairro() {
+        return bairro;
+    }
+
+    public void setBairro(String bairro) {
+        this.bairro = bairro;
+    }
+
+    public String getCidade() {
+        return cidade;
+    

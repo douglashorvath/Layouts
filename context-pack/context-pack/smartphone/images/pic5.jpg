@@ -1,0 +1,77 @@
+/*
+* Realiza a conexão com o banco de dados, e cria as devidas ligações para que se possa trabalhar com o mesmo.
+*/
+
+
+package Banco;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.Properties;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+
+public class Conexao {
+    private Connection conexao;
+    private String mensagem;
+    private String url;
+
+    //contrutor que recebe a String de conexão, o usuário e senha do banco e realiza a conexão com o banco.
+    public Conexao(String url) {
+        this.url=url;
+        refresh();
+    }
+    
+    public void refresh()
+    {
+        if(isConnected())
+            try {
+            conexao.close();
+        } catch (SQLException ex) {
+            Logger.getLogger(Conexao.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        conexao = null;
+        try {
+                Class.forName("org.sqlite.JDBC");
+            
+                conexao=DriverManager.getConnection(url);
+        }
+        catch(ClassNotFoundException c)
+        { mensagem = "ERRO Diver JDBC: "+c.getMessage(); 
+            System.out.println(mensagem);}
+        catch (SQLException s)
+        { mensagem = "ERRO Sql/Banco: "+s.getMessage();  
+            System.out.println(mensagem);}
+        catch (Exception e)
+        { mensagem = "Outro erro: "+e.getMessage();      
+            System.out.println(mensagem);}
+    }
+    
+    //verifica se o banco está conectado
+    public boolean isConnected() {
+        if (conexao==null)
+            return false;
+        return true;
+    }
+    
+    //retorna a mensagem de erro, se houver.
+    public String getMensagem() {
+        return mensagem;
+    }
+    
+    public void Desconectar() throws SQLException
+    {
+        if(conexao != null)
+        {
+            conexao.close();
+            conexao=null;
+
+            System.out.println("Desconectado.");
+        }
+    }
+    
+    //recebe uma String com o SQL e executa esse S

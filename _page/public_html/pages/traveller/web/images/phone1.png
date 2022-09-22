@@ -1,0 +1,41 @@
+    }
+
+    /**
+     * Set the first nickname which should be displayed when retrieving
+     * a list of nicknames.
+     *
+     * @param string $value The first nickname to be returned, or null to
+     *              disable.
+     */
+    public function setStartNickname($value)
+    {
+        if ($value !== null) {
+            $this->_params['startNickname'] = $value;
+        } else {
+            unset($this->_params['startNickname']);
+        }
+    }
+
+    /**
+     * Get the first nickname which should be displayed when retrieving
+     * a list of nicknames.
+     *
+     * @return string The first nickname to be returned, or null to
+     *              disable.
+     */
+    public function getStartNickname()
+    {
+        if (array_key_exists('startNickname', $this->_params)) {
+            return $this->_params['startNickname'];
+        } else {
+            return null;
+        }
+    }
+
+    /**
+     * Returns the URL generated for this query, based on it's current
+     * parameters.
+     *
+     * @return string A URL generated based on the state of this query.
+     */
+    public function getQue

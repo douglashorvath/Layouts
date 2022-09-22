@@ -1,0 +1,25 @@
+   {
+        if(id < 0)
+        {
+            return null;
+        }
+        else
+        {
+            String sql = "SELECT * FROM PACIENTES WHERE ID = "+id;
+            Conecta con = new Conecta();
+            ResultSet rs = con.consulta(sql);
+            try {
+                if(rs.next())
+                {
+                    Paciente p = new Paciente();
+                    p.setId(id);
+                    p.setNome(rs.getString("NOME"));
+                    p.setCpf(rs.getString("CPF"));
+                    p.setRua(rs.getString("RUA"));
+                    p.setNumero(rs.getInt("NUMERO"));
+                    p.setBairro(rs.getString("BAIRRO"));
+                    p.setCidade(rs.getString("CIDADE"));
+                    p.setEstado(rs.getString("ESTADO"));
+                    p.setCep(rs.getString("CEP"));
+                    p.setCod_externo(rs.getInt("COD_EXTERNO"));
+                    p.set

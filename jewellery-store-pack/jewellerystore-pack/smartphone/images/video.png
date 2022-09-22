@@ -1,0 +1,32 @@
+                          return true;
+                    } catch (FileNotFoundException ex) {
+                        Logger.getLogger(Conecta.class.getName()).log(Level.SEVERE, null, ex);
+                        return false;
+                    } catch (IOException ex) {
+                        Logger.getLogger(Conecta.class.getName()).log(Level.SEVERE, null, ex);
+                        return false;
+                    }
+
+                }
+                else
+                {
+                    try {
+                        System.out.println("Criando arquivo location.database");
+                        bd.createNewFile();
+                        FileWriter fw = new FileWriter( bd );
+                        BufferedWriter bw = new BufferedWriter( fw );
+                        System.out.println("Escrevendo novo caminho no banco: "+novoCaminho);
+                        bw.write(novoCaminho);
+                        bw.close();
+                        fw.close();
+                        return true;
+                    } catch (IOException ex) {
+                        Logger.getLogger(Conecta.class.getName()).log(Level.SEVERE, null, ex);
+                        return false;
+                    }
+                }
+                
+            } catch (SQLException ex) {
+                Logger.getLogger(Conecta.class.getName()).log(Level.SEVERE, null, ex);
+                return false;
+   

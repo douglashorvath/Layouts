@@ -1,0 +1,165 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package Classes;
+
+import Banco.Conecta;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+/**
+ *
+ * @author Douglas Horvath <douglashorvath@icloud.com>
+ */
+public class Plano {
+    
+    private int id;
+    private String nome;
+    private String descricao;
+    private int cod_externo;
+
+    public Plano() {
+        this.id = -1;
+        this.nome = null;
+        this.descricao = null;
+        this.cod_externo = -1;
+    }  
+    
+    public boolean insert()
+    {
+        if(nome == null)
+        {
+            return false;
+        }
+        else
+        {
+            String sql = "INSERT INTO PLANOS (NOME,DESCRICAO,COD_EXTERNO) VALUES ('"+nome+"','"+descricao+"',"+cod_externo+")";
+            Conecta con = new Conecta();
+            if(con.executa(sql))
+            {
+                con.Desconecta();
+                return true;
+            }
+            else
+            {
+                con.Desconecta();
+                return false;
+            }
+        }
+    }
+    
+    public boolean update()
+    {
+        if(nome == null || id < 0)
+        {
+            return false;
+        }
+        else
+        {
+            String sql = "UPDATE PLANOS SET "
+                    + "NOME = '"+this.nome+"', "
+                    + "DESCRICAO = '"+this.descricao+"', "
+                    + "COD_EXTERNO = "+this.cod_externo 
+                    + "WHERE ID = "+this.id;
+            Conecta con = new Conecta();
+            if(con.executa(sql))
+            {
+                con.Desconecta();
+                return true;
+            }
+            else
+            {
+                con.Desconecta();
+                return false;
+            }
+        }
+    }
+    
+    public boolean delete()
+    {
+        if(id < 0)
+        {
+            return false;
+        }
+        else
+        {
+            String sql = "DELETE FROM PLANOS WHERE ID = "+this.id;
+            Conecta con = new Conecta();
+            if(con.executa(sql))
+            {
+                con.Desconecta();
+                return true;
+            }
+            else
+            {
+                con.Desconecta();
+                return false;
+            }
+        }
+    }
+    
+    public static final Plano getPlano(int id)
+    {
+        if(id < 0)
+        {
+            return null;
+        }
+        else
+        {
+            String sql = "SELECT * FROM PLANOS WHERE ID = "+id;
+            Conecta con = new Conecta();
+            ResultSet rs = con.consulta(sql);
+            try {
+                if(rs.next())
+                {
+                    Plano p = new Plano();
+                    p.setId(id);
+                    p.setNome(rs.getString("NOME"));
+                    p.setDescricao(rs.getString("DESCRICAO"));
+                    p.setCod_externo(rs.getInt("COD_EXTERNO"));
+                    con.Desconecta();
+                    return p;
+                }
+                else
+                {
+                    return null;
+                }
+            } catch (SQLException ex) {
+                con.Desconecta();
+                Logger.getLogger(Plano.class.getName()).log(Level.SEVERE, null, ex);
+                return null;
+            }
+        }
+    }
+    
+    
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public String getDescricao() {
+        return descricao;
+    }
+
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
+    }
+
+    

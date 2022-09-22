@@ -1,0 +1,252 @@
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Free Fotoria-Scope Website Template | Portfolio :: w3layouts</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="web/css/style.css" type="text/css" media="all" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<link rel="stylesheet" href="web/css/flexslider.css" type="text/css" media="all" />
+<script src="web/js/modernizr.js"></script>
+<script src="web/js/responsivethumbnailgallery.js"></script>
+<script src="web/js/responsive-nav.js"></script>
+<link rel="stylesheet" href="web/css/responsive-nav.css">
+<link rel="stylesheet" href="web/css/lightbox.css" type="text/css" media="all" />
+
+</head>
+<body>
+<div class="header">
+<div class="wrap">
+	<div class="logo"><a href="index.html"><img src="web/images/logo.png" alt="" /></a></div>
+   	<div class="con-right">
+		<div id="nav">
+	      <ul>
+	        	<li><a href="index.html">Home</a></li>
+				<li><a href="about.html">About</a></li>
+				<li><a href="portfolio.html">Portfolio</a></li>
+				<li><a href="services.html">Services</a></li>
+				<li><a href="about.html">News</a></li>
+				<li><a href="contact.html">Contact</a></li>
+	      </ul>
+    </div>
+	<script>
+      var navigation = responsiveNav("#nav", {
+        animate: true,        // Boolean: Use CSS3 transitions, true or false
+        transition: 400,      // Integer: Speed of the transition, in milliseconds
+        label: "Menu",        // String: Label for the navigation toggle
+        insert: "after",      // String: Insert the toggle before or after the navigation
+        customToggle: "",     // Selector: Specify the ID of a custom toggle
+        openPos: "relative",  // String: Position of the opened nav, relative or static
+        jsClass: "js",        // String: 'JS enabled' class which is added to <html> el
+        init: function(){},   // Function: Init callback
+        open: function(){},   // Function: Open callback
+        close: function(){}   // Function: Close callback
+      });
+    </script>
+  	</div>
+      <div class="clear"></div>
+</div>
+</div>
+<div class="banner">
+	<div class="wrap">
+		<div id="main" role="main">
+      <section class="slider">
+        <div class="flexslider">
+          <ul class="slides">
+            <li data-thumb="web/images/thumb.jpg">
+  	    	    <img src="web/images/banner.jpg" />
+  	    		</li>
+  	    		  <li data-thumb="web/images/thumb1.jpg">
+  	    	  <img src="web/images/banner1.jpg" />
+  	    		</li>
+  	    		  <li data-thumb="web/images/thumb2.jpg">
+  	    	    <img src="web/images/banner2.jpg" />
+  	    		</li>
+  	    		  <li data-thumb="web/images/thumb3.jpg">
+  	    	    <img src="web/images/banner3.jpg" />
+  	    		</li>
+          </ul>
+        </div>
+     </section>
+   </div>
+  </div>
+  <!-- jQuery -->
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+  <script>window.jQuery || document.write('<script src="web/js/libs/jquery-1.7.min.js">\x3C/script>')</script>
+ <!-- FlexSlider -->
+  <script defer src="web/js/jquery.flexslider.js"></script><script type="text/javascript">
+    $(function(){
+      SyntaxHighlighter.all();
+    });
+    $(window).load(function(){
+      $('.flexslider').flexslider({
+        animation: "slide",
+        controlNav: "thumbnails",
+        start: function(slider){
+          $('body').removeClass('loading');
+        }
+      });
+    });
+  </script>
+</div>
+<div class="content">
+	<div class="wrap">
+		<div class="about">
+			<div class="port-right">
+				<div class="section group">
+					<div class="col span_1_of_4">
+						<h3>Categories:</h3>
+						<div class="list-1">
+								<ul>
+				                	<li><a href="#">Fashion</a></li>
+				                    <li><a href="#">Animals</a></li>
+				                    <li><a href="#">Landscapes</a></li>
+				                    <li><a href="#">Sport</a></li>
+				                    <li><a href="#">Portrait</a></li>
+				                    <li><a href="#">Wedding</a></li>
+				                    <li><a href="#">Urban</a></li>
+				                </ul>
+						</div>
+					</div>
+					<div class="col span_1_of_4">
+						<div class="imageRow">
+						  	<div class="single">
+						  		<a href="web/images/p1.jpg" rel="lightbox"><img src="web/images/pic2.jpg" alt="" /></a>
+						  	</div>
+		  				</div>
+		  				<div class="imageRow">
+						  	<div class="single">
+						  		<a href="web/images/p2.jpg" rel="lightbox"><img src="web/images/pic3.jpg" alt="" /></a>
+						  	</div>
+		  				</div>
+		  				<div class="imageRow">
+						  	<div class="single">
+						  		<a href="web/images/p3.jpg" rel="lightbox"><img src="web/images/pic4.jpg" alt="" /></a>
+						  	</div>
+		  				</div>
+					</div>
+					<div class="col span_1_of_4">
+						<div class="section" id="example">
+					<div class="imageRow">
+						  	<div class="single">
+						  		<a href="web/images/p4.jpg" rel="lightbox"><img src="web/images/pic5.jpg" alt="" /></a>
+						  	</div>
+		  				</div>
+		  				<div class="imageRow">
+						  	<div class="single">
+						  		<a href="web/images/p5.jpg" rel="lightbox"><img src="web/images/pic6.jpg" alt="" /></a>
+						  	</div>
+		  				</div>
+		  				<div class="imageRow">
+						  	<div class="single">
+						  		<a href="web/images/p6.jpg" rel="lightbox"><img src="web/images/pic7.jpg" alt="" /></a>
+						  	</div>
+		  				</div>
+					</div>
+					</div>
+					<div class="col span_1_of_4">
+						<div class="imageRow">
+						  	<div class="single">
+						  		<a href="web/images/p7.jpg" rel="lightbox"><img src="web/images/pic8.jpg" alt="" /></a>
+						  	</div>
+		  				</div>
+		  				<div class="imageRow">
+						  	<div class="single">
+						  		<a href="web/images/p8.jpg" rel="lightbox"><img src="web/images/pic9.jpg" alt="" /></a>
+						  	</div>
+		  				</div>
+		  				<div class="imageRow">
+						  	<div class="single">
+						  		<a href="web/images/p9.jpg" rel="lightbox"><img src="web/images/pic10.jpg" alt="" /></a>
+						  	</div>
+		  				</div>
+					</div>
+				<div class="clear"></div>
+			</div>
+			</div>
+</div><!-- end #content -->
+<script src="lightboxjs/jquery-1.7.2.min.js"></script>
+<script src="lightboxjs/lightbox.js"></script>
+<script>
+  jQuery(document).ready(function($) {
+      $('a').smoothScroll({
+        speed: 1000,
+        easing: 'easeInOutCubic'
+      });
+
+      $('.showOlderChanges').on('click', function(e){
+        $('.changelog .old').slideDown('slow');
+        $(this).fadeOut();
+        e.preventDefault();
+      })
+  });
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-2196019-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+</div>
+<div class="clear"></div>
+</div>
+<div class="footer">
+ 	<div class="wrap">
+ 		<div class="section group">
+				<div class="col span_1_of_4">
+					<div class="footer-nav">
+		                <ul>
+		                   <li><a href="">Our Tips of gallery Template diam nonummy </a></li>
+		                    <li><a href="">Our Tips of gallery Template diam nonummy </a></li>
+		                   <li><a href="">Our Tips of gallery Template diam nonummy </a></li>
+		                   </ul>
+		              </div>
+				</div>
+				<div class="col span_1_of_4">
+					<div class="textcontact">
+						<p>consectetuer adipiscing elit,<br>
+						consectetuer<br>
+						
+						Ph: +1-800-234-52589.<br>
+						Email:Support(at)Fotoria-scope.com<br>
+						</p>
+					</div>
+				</div>
+				<div class="col span_1_of_4">
+					<div class="call_info">
+						<p class="txt_3">Call us toll free:</p>
+						<p class="txt_4">1 800 234 23456</p>
+					</div>
+				</div>
+				<div class="col span_1_of_4">
+				<div class="footer-nav">
+		                <ul>
+		                   <li><a href="">Our Tips of gallery Template diam nonummy </a></li>
+		                    <li><a href="">Our Tips of gallery Template diam nonummy </a></li>
+		                   <li><a href="">Our Tips of gallery Template diam nonummy </a></li>
+		                   </ul>
+		              </div>
+				</div>
+				<div class="clear"></div>
+			</div>
+			</div>
+		</div>
+<div class="footer-bottom">
+	<div class="wrap">
+		<div class="copy">
+			<p>© 2013  All rights Reserved | Design by <a href="http://w3layouts.com">W3Layouts</a></p>
+		</div>
+ 	</div>
+</div>
+</body>
+</html>

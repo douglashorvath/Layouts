@@ -1,0 +1,158 @@
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Deluxe website for Iphone, Android, Smartphone Mobile Website Template | Home :: w3layouts</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+		</script>
+		<link href="smartphone/css/style.css" rel="stylesheet" type="text/css"  media="all" />
+		<link href='http://fonts.googleapis.com/css?family=Karla' rel='stylesheet' type='text/css'>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+		<script src="smartphone/js/responsiveslides.min.js"></script>
+		  <script>
+		    // You can also use "$(window).load(function() {"
+			    $(function () {
+			
+			      // Slideshow 1
+			      $("#slider1").responsiveSlides({
+			        maxwidth: 1600,
+			        speed: 600
+			      });
+			});
+		  </script>
+		  <script type="text/javascript">window.onload = function() { w3Init(); };</script>
+		<script src="smartphone/js/mobile.js"></script>
+		<script>
+		$(function() {
+			var pull 		= $('#pull');
+				menu 		= $('nav ul');
+				menuHeight	= menu.height();
+
+			$(pull).on('click', function(e) {
+				e.preventDefault();
+				menu.slideToggle();
+			});
+
+			$(window).resize(function(){
+        		var w = $(window).width();
+        		if(w > 320 && menu.is(':hidden')) {
+        			menu.removeAttr('style');
+        		}
+    		});
+		});
+	</script>
+	</head>
+	<body>
+	<!---start-wrap---->
+	<div class="wrap">
+		<!---start-wrap---->
+		<div class="wrap">
+			<!---start-sidebar---->
+			<div id="w3-universal-nav">
+    	<ul id="header">
+    		<a href="index.html"><img src="smartphone/images/logo.png" alt=""/></a>
+    	</ul>
+    	<ul id="w3-menu-links" style="display: none;">
+    	</ul>
+    	<div id="w3-search-module" style="display: none;">
+    		<form id="w3-search-form" action="/Search/" method="get">
+    			<p>
+    				<label for="q">
+    					<span class="w3-access">Search</span>
+    				</label>
+    				<input accesskey="s" type="text" maxlength="100" value="" name="q" id="q"><input type="hidden" value="17" name="v">
+    			</p>
+    		</form>
+    		</div>
+    		</div>
+</div>
+<!-- The menu -->
+  <nav class="clearfix">
+				<ul>
+					<li><a href="index.html">Home</a></li>
+					<li><a href="about.html">About</a></li>
+					<li><a href="services.html">Services</a></li>
+					<li><a href="gallery.html">Gallery</a></li>
+					<li><a href="contact.html">Contact</a></li>
+				</ul>
+		<a href="#" id="pull">Menu</a>
+	</nav>
+	<div class="clear"> </div>
+		<!--start-image-slider---->
+			<div class="image-slider">
+				<!-- Slideshow 1 -->
+				  <ul class="rslides" id="slider1">
+					      <li><img src="smartphone/images/slider1.jpg" alt=""></li>
+					      <li><img src="smartphone/images/slider2.jpg" alt=""></li>
+					      <li><img src="smartphone/images/slider3.jpg" alt=""></li>
+				  </ul>
+				 <!-- Slideshow 2 -->
+			</div>
+		<!--End-image-slider---->
+	<div class="clear"> </div>	
+	<!---start-content---->	
+	<div class="content">
+		<div class="grids">
+			<div class="section group">
+				<div class="grid_1_of_3 images_1_of_3">
+					  <h3>Welcome!</h3>
+					  <img src="smartphone/images/g1.jpg">
+					  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+				     <div class="button"><span><a href="#">Read More</a></span></div>
+				</div>
+				<div class="grid_1_of_3 images_1_of_3">
+					  <h3>Our Team</h3>
+					   <img src="smartphone/images/g2.jpg">
+					  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+				     <div class="button"><span><a href="#">Read More</a></span></div>
+				</div>
+				<div class="grid_1_of_3 images_1_of_3 last">
+					<h3>Services</h3>
+					  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+				     <ul>
+				     	<li><a href="#">consectetur adipisicing elit</a></li>
+				     	<li><a href="#">eiusmod tempor incididunt ut</a></li>
+				     	<li><a href="#">dolore magna aliqua. Duis</a></li>
+				     	<li><a href="#">empor incididunt ut labore et</a></li>
+				     </ul>
+				     <div class="button"><span><a href="#">Read More</a></span></div>
+				</div>
+			</div>
+		</div>
+		<div class="clear"> </div>
+		<div class="box">
+			<div class="left-box">
+				<h3>What People Say About Us</h3>
+				<div class="left-box1 frist-box">
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed in reprehenderit adipisicing elit, sed in reprehenderit in voluptate velit esse cillum.</p>
+					<h5>consectetur elit</h5>
+					<span>voluptate</span>
+				</div>
+				<div class="clear"> </div>
+				<a href="#">See all</a>
+			</div>
+			<div class="clear"> </div>
+		</div>
+	</div>
+	<!---End-content---->	
+	<div class="clear"> </div>
+	<div class="footer">
+		<div class="footer-left">
+			<a href="index.html"><img src="smartphone/images/logo1.png" title="logo" /></a>
+		</div>
+		<div class="footer-right">
+			<p>Design by <a href="http://w3layouts.com/">W3layouts</a></p>
+		</div>
+		<div class="clear"> </div>
+	</div>
+	</div>
+	<!---End-wrap---->
+	</body>
+</html>
+

@@ -1,0 +1,140 @@
+/* reset */
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,dl,dt,dd,ol,nav ul,nav li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline;}
+article, aside, details, figcaption, figure,footer, header, hgroup, menu, nav, section {display: block;padding-top:10px;}
+ol,ul{list-style:none;margin:0;padding:0;}
+blockquote,q{quotes:none;}
+blockquote:before,blockquote:after,q:before,q:after{content:'';content:none;}
+table{border-collapse:collapse;border-spacing:0;}
+/* start editing from here */
+a{text-decoration:none;}
+.txt-rt{text-align:right;}/* text align right */
+.txt-lt{text-align:left;}/* text align left */
+.txt-center{text-align:center;}/* text align center */
+.float-rt{float:right;}/* float right */
+.float-lt{float:left;}/* float left */
+.clear{clear:both;}/* clear float */:
+.pos-relative{position:relative;}/* Position Relative */
+.pos-absolute{position:absolute;}/* Position Absolute */
+.vertical-base{	vertical-align:baseline;}/* vertical align baseline */
+.vertical-top{	vertical-align:top;}/* vertical align top */
+.underline{	padding-bottom:5px;	border-bottom: 1px solid #eee; margin:0 0 20px 0;}/* Add 5px bottom padding and a underline */
+nav.vertical ul li{	display:block;}/* vertical menu */
+nav.horizontal ul li{	display: inline-block;}/* horizontal menu */
+img{max-width:100%;display: block;}
+/*end reset*/
+/* Experiment Specific Styles */
+
+.top {
+	background: rgb(255, 255, 255);
+	color: #fff;
+	position: absolute;
+	
+	top: 0;
+	right: 10px;
+	z-index: 2;
+	overflow: hidden;
+	height: 78px;
+	font-family: 'Archivo Narrow', sans-serif;
+	float: right;
+	width: 84px;
+}
+
+.drawer {
+	-webkit-transform: translate3d(0, 84px, 0);
+	-moz-transform: translate3d(0, 84px, 0);
+	-o-transform: translate3d(0, 84px, 0);
+	transform: translate3d(0, 84px, 0);
+	-webkit-transition:-webkit-transform 0.25s linear;
+	-moz-transition:-moz-transform 0.25s linear;
+	-o-transition:-o-transform 0.25s linear;
+	transition:transform 0.25s linear;
+}
+
+.drawer.active {
+	-webkit-transition: all .9s;
+	-moz-transition: all .9s;
+	-o-transition: all .9s;
+	-ms-transition: all .9s;
+	transition: all .9s;
+	display:none;
+}
+
+
+a.menu {
+	position: absolute;
+	z-index: 3;
+	border:1px solid white;
+	text-decoration: none;
+	top: 1.3em;
+	right: 0.6em;
+	background: #0160A4;
+	color: #fff;
+	text-transform: uppercase;
+	
+	padding: 2px 8px 3px 8px;
+	border-radius: 4px;
+	margin-top: 13px;
+	font-size: 12px;
+}
+a.menu span {
+	font-size:1.6em;
+	vertical-align: -0.15em;
+}
+.drawer  nav ul {
+	list-style:none;
+}
+.drawer  nav ul li a {
+	display: block;
+	text-decoration: none;
+	background: #333333;
+	color: white;
+	padding: 1em;
+	margin-bottom: 1px;
+	text-indent: -93px;
+
+	text-transform: uppercase;
+	font-size:12px;
+}
+
+/* Fallbacks */
+
+.no-csstransforms .top {
+	position: static;
+}
+
+.no-csstransforms .drawer nav {
+	display: none;
+}
+
+.no-csstransforms .drawer.active nav {
+	display: block;
+}
+
+@media all and (min-width: 30em) {
+	.experiment-number {
+		float: left;
+		margin-right: 0.9em;
+		border-right: 1px solid;
+		padding-right: 1em;
+		padding-left: 0.9em;
+		padding-bottom: 0.6em;
+		margin-bottom: 0;
+	}
+	.drawer {
+		display:none;
+	
+	}
+	.drawer.active {
+		-webkit-transform: translate3d(0,70px,0);
+		-moz-transform:translate3d(0,87px,0);
+		-o-transform:translate3d(0,87px,0);
+		transform:translate3d(0,87px,0);
+		display:block;
+	}
+	h1 {
+		text-align: left;
+	}
+	.container {
+		padding: 2.6em;
+	}
+}

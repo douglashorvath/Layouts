@@ -1,0 +1,175 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package Content.Contabilidade;
+
+import Banco.Conecta;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+/**
+ *
+ * @author Douglas
+ */
+public class Pagamento {
+    
+    private int id;
+    private int idOrcamento;
+    private int numeroParcela;
+    private float valorParcela;
+    private LocalDate dataParcela;
+    private LocalDate dataPagamento;
+    private int status; //0 para não pago, 1 para pago;
+
+    public Pagamento() {
+    }
+    
+    
+    public static final ArrayList<Pagamento> getRecebimentos()
+    {
+        DateTimeFormatter format = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        ArrayList<Pagamento> parcelas = new ArrayList<>();
+        Conecta con = new Conecta();
+        String sql = "SELECT * FROM RECEBIMENTOS ORDER BY ID_RECEBIMENTO ASC";
+        ResultSet rs = con.consulta(sql);
+        try {
+            while(rs.next())
+            {
+                Pagamento pgt = new Pagamento();
+                pgt.setId(rs.getInt("ID_RECEBIMENTO"));
+                pgt.setIdOrcamento(rs.getInt("ID_ORCAMENTO"));
+                pgt.setNumeroParcela(rs.getInt("NUMERO_PARCELA"));
+                pgt.setValorParcela(rs.getFloat("VALOR_RECEBIMENTO"));
+                pgt.setDataParcela(LocalDate.parse(rs.getString("DATA_RECEBIMENTO"),format));
+                pgt.setDataPagamento(LocalDate.parse(rs.getString("DATA_PAGAMENTO"),format));
+                pgt.setStatus(rs.getInt("STATUS_RECEBIMENTO"));
+                parcelas.add(pgt);
+            }
+        } catch (SQLException ex) {
+            con.Desconecta();
+            Logger.getLogger(Pagamento.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        con.Desconecta();
+        return parcelas;
+    }
+    
+    public static final ArrayList<Pagamento> getRecebimentos(LocalDate dataDe, LocalDate dataAte)
+    {
+        DateTimeFormatter format = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        ArrayList<Pagamento> parcelas = new ArrayList<>();
+        Conecta con = new Conecta();
+        String sql = "SELECT * FROM RECEBIMENTOS WHERE DATA_RECEBIMENTO BETWEEN '"+dataDe.format(format)+"' AND '"+dataAte.format(format)+"' ORDER BY ID_RECEBIMENTO ASC";
+        System.out.println(sql);
+        ResultSet rs = con.consulta(sql);
+        try {
+            while(rs.next())
+            {
+                Pagamento pgt = new Pagamento();
+                pgt.setId(rs.getInt("ID_RECEBIMENTO"));
+                pgt.setIdOrcamento(rs.getInt("ID_ORCAMENTO"));
+                pgt.setNumeroParcela(rs.getInt("NUMERO_PARCELA"));
+                pgt.setValorParcela(rs.getFloat("VALOR_RECEBIMENTO"));
+                pgt.setDataParcela(LocalDate.parse(rs.getString("DATA_RECEBIMENTO"),format));
+                String dataPagto = rs.getString("DATA_PAGAMENTO");
+                if(dataPagto != null && !dataPagto.isEmpty())
+                    pgt.setDataPagamento(LocalDate.parse(dataPagto,format));
+                pgt.setStatus(rs.getInt("STATUS_RECEBIMENTO"));
+                parcelas.add(pgt);
+            }
+        } catch (SQLException ex) {
+            con.Desconecta();
+            Logger.getLogger(Pagamento.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        con.Desconecta();
+        return parcelas;
+    }
+    
+    public static final ArrayList<Pagamento> getParcelas(int idOrcamento)
+    {
+        DateTimeFormatter format = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        ArrayList<Pagamento> parcelas = new ArrayList<>();
+        if(idOrcamento > -1){
+            Conecta con = new Conecta();
+            String sql = "SELECT * FROM RECEBIMENTOS WHERE ID_ORCAMENTO = "+idOrcamento+" ORDER BY NUMERO_PARCELA ASC";
+            ResultSet rs = con.consulta(sql);
+            try {
+                while(rs.next())
+                {
+                    Pagamento pgt = new Pagamento();
+                    pgt.setId(rs.getInt("ID_RECEBIMENTO"));
+                    pgt.setIdOrcamento(idOrcamento);
+                    pgt.setNumeroParcela(rs.getInt("NUMERO_PARCELA"));
+                    pgt.setValorParcela(rs.getFloat("VALOR_RECEBIMENTO"));
+                    pgt.setDataParcela(LocalDate.parse(rs.getString("DATA_RECEBIMENTO"),format));
+                    pgt.setStatus(rs.getInt("STATUS_RECEBIMENTO"));
+                    parcelas.add(pgt);
+                }
+            } catch (SQLException ex) {
+                Logger.getLogger(Pagamento.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        return parcelas;
+    }
+    
+    public static final void deleteAll(int idOrcamento, boolean incluirPagas)
+    {
+        Conecta con = new Conecta();
+        String del = "";
+        if(incluirPagas)
+        {
+            del = "DELETE FROM RECEBIMENTOS WHERE ID_ORCAMENTO = "+idOrcamento;
+        }
+        else
+        {
+            del = "DELETE FROM RECEBIMENTOS WHERE ID_ORCAMENTO = "+idOrcamento+" AND STATUS_RECEBIMENTO = 0";
+        }
+        con.executa(del);
+        con.Desconecta();
+    }
+    
+    public static final boolean insertParcela(Pagamento pgt)
+    {
+        if(pgt != null)
+        {
+            if(pgt.getIdOrcamento()>-1 && pgt.getNumeroParcela()>0 && pgt.getValorParcela()>-1 && pgt.getDataParcela() != null)
+            {
+                int status = 0;
+                if(pgt.getStatus() == 1)
+                    status = 1;
+                Conecta con = new Conecta();
+                DateTimeFormatter format = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+                String sql = "INSERT INTO RECEBIMENTOS (ID_ORCAMENTO,DATA_RECEBIMENTO,VALOR_RECEBIMENTO,NUMERO_PARCELA,STATUS_RECEBIMENTO) VALUES ("+pgt.idOrcamento+", '"+pgt.getDataParcela().format(format)+"', "+pgt.getValorParcela()+", "+pgt.getNumeroParcela()+", "+status+")";
+                if(con.executa(sql))
+                {
+                    con.Desconecta();
+                    return true;
+                }
+                else
+                {
+                    con.Desconecta();
+                    return false;
+                }
+            }
+            else
+            {
+                return false;
+            }
+        }
+        else
+        {
+            return false;
+        }
+    }
+    
+    public static final boolean pago(int idOrcamento,int parcela)
+    {
+        LocalDate hoje = LocalDate.now();
+        DateTimeFormatter format = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        Conecta con = ne

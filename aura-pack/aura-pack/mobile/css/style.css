@@ -1,0 +1,183 @@
+/*
+Author: W3layout
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+*/
+/* reset */
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,dl,dt,dd,ol,nav ul,nav li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline;}
+article, aside, details, figcaption, figure,footer, header, hgroup, menu, nav, section {display: block;}
+ol,ul{list-style:none;margin:0px;padding:0px;}
+blockquote,q{quotes:none;}
+blockquote:before,blockquote:after,q:before,q:after{content:'';content:none;}
+table{border-collapse:collapse;border-spacing:0;}
+/* start editing from here */
+a{text-decoration:none;}
+.txt-rt{text-align:right;}/* text align right */
+.txt-lt{text-align:left;}/* text align left */
+.txt-center{text-align:center;}/* text align center */
+.float-rt{float:right;}/* float right */
+.float-lt{float:left;}/* float left */
+.clear{clear:both;}/* clear float */
+.pos-relative{position:relative;}/* Position Relative */
+.pos-absolute{position:absolute;}/* Position Absolute */
+.vertical-base{	vertical-align:baseline;}/* vertical align baseline */
+.vertical-top{	vertical-align:top;}/* vertical align top */
+.underline{	padding-bottom:5px;	border-bottom: 1px solid #eee; margin:0 0 20px 0;}/* Add 5px bottom padding and a underline */
+nav.vertical ul li{	display:block;}/* vertical menu */
+nav.horizontal ul li{	display: inline-block;}/* horizontal menu */
+img{max-width:100%;}
+/*end reset*/
+body{
+	font-family: "verdana", Arial, Helvetica, sans-serif;
+	font-size:13px;
+	background: url('../images/bg.jpg');
+	background-repeat:no-repeat;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+.logo{
+	text-align:center;
+}
+.drp-dwn{
+	margin-top: 10px;
+}
+.drp-dwn select {
+	padding: 4px;
+	outline: none;
+	display: block !important;
+	width: 100%;
+	color: #444;
+	border: 1px solid #555;
+	background: #eee;
+	cursor: pointer;
+}
+/*about*/
+.about{
+	padding: 10px;
+}
+.para{
+	margin-bottom: 10px;
+}
+.about h2,.boxes h2 ,.contact_info h3,.contact-form h3,.company_address h3{
+	font-size: 2.4em;
+	color: #FFC6A3;
+}
+.boxes img{
+	margin: 8px 0;
+}
+.para p{
+	margin-bottom: 10px;
+}
+.para p,.boxes p{
+	font-size: 13px;
+	color: #fff;
+	line-height: 1.5em;
+}
+.btn-a ,.contact-form input[type="submit"]{
+	margin-top:10px;
+	cursor:pointer;
+	padding:4px 6px;
+	color:#FFCBA8;
+	border:1px solid rgb(212,85,2);
+	background: rgb(212,85,2);
+}
+.btn-a:hover,.contact-form input[type="submit"]:hover{
+	background:rgb(226, 93, 10);
+}
+/*services*/
+.service{
+	padding: 10px;
+}
+/***Services*/
+.btn1{
+	padding-bottom: 10px;
+}
+.boxes h2{
+	margin-bottom: 0;
+}
+.boxes li p{
+	margin-top:0px;
+	margin-bottom:10px;
+	line-height: 1.8em;
+}
+.boxes li.btn1{
+	padding: 0 10px 10px;
+}
+/***Contact*/
+.main{
+	padding: 10px;
+}
+form{
+	margin-top: 0%;
+}
+/*  Contact Form  ============================================================================= */
+.contact-form span{
+	display: block;
+	padding-bottom: 2px;
+	color: #fff;
+}
+.contact-form input[type="text"],.contact-form textarea{
+	letter-spacing:1px;
+	color: #fff;
+	padding: 8px;
+	display: block;
+	width: 92%;
+	background: rgba(255, 255, 255, 0.32);
+	border: 1px solid rgba(39, 24, 16, 0.24);
+	outline: none;
+	-webkit-appearance: none;
+}
+.contact-form textarea{
+	resize:none;
+	height:120px;		
+}
+.company_address p{
+	color:#fff;
+	line-height: 1.5em;
+}
+.company_address p span{
+	text-decoration:underline;
+	cursor:pointer;
+}
+.company_address p span:hover{
+	text-decoration:none;
+	color: #DD5A0B;
+	-webkit-transition:0.9s;
+}
+.map{
+	margin-top:0%;
+	border:1px solid #C7C7C7;
+	margin-bottom:10px;
+}
+/*footer*/
+.footer{
+	padding:10px;
+	background: rgba(51, 30, 13, 0.15);
+}
+/*---soc-icons---*/
+.soc-icons ul li{
+	vertical-align:middle;
+	display: inline-block;
+} 
+.soc-icons ul li a{
+	color:#FFDFCB;
+	font-size: 13px;
+	display: block;
+} 
+.soc-icons ul li a img:hover{
+	opacity: 0.6;
+}
+.copy p{
+	line-height:1.5em;
+	font-size: 13px;
+	color:#fff;
+}
+.copy p a{
+	color:#FFBC9D;
+}
+.copy p a:hover{
+	text-decoration: underline;	
+}

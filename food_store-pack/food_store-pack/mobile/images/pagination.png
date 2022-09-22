@@ -1,0 +1,16 @@
+<html lang="en">
+<head>
+<title>VTableInherit - Using as</title>
+<meta http-equiv="Content-Type" content="text/html">
+<meta name="description" content="Using as">
+<meta name="generator" content="makeinfo 4.7">
+<link title="Top" rel="start" href="index.html#Top">
+<link rel="up" href="Pseudo-Ops.html#Pseudo-Ops" title="Pseudo Ops">
+<link rel="prev" href="VTableEntry.html#VTableEntry" title="VTableEntry">
+<link rel="next" href="Warning.html#Warning" title="Warning">
+<link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
+<!--
+This file documents the GNU Assembler "as".
+
+Copyright (C) 1991, 92, 93, 94, 95, 96, 97, 98, 99, 2000, 2001, 2002,
+2006, 2007 Free So

@@ -1,0 +1,195 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package Classes;
+
+import Banco.Conecta;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+/**
+ *
+ * @author Douglas
+ */
+public class Aniversariante {
+    
+    private int id;
+    private int id_cliente; // erro 5
+    private String nome; // erro 1
+    private String sexo; // erro 2
+    private int idade; // erro 3
+                    //aniversariante já existe erro 4
+                    // erro ao inserir no banco de dados erro 6
+
+    public Aniversariante(String nome, String sexo, int idade) {
+        clearClass();
+        this.nome = nome;
+        this.sexo = sexo;
+        this.idade = idade;
+        toUpperCase();
+    }
+ 
+    public Aniversariante(int id_cliente, String nome, String sexo, int idade) {
+        
+        clearClass();
+        this.id_cliente = id_cliente;
+        this.nome = nome;
+        this.sexo = sexo;
+        this.idade = idade;
+        toUpperCase();
+    }
+
+    public Aniversariante() {
+        clearClass();
+    }
+    
+    public void toUpperCase()
+    {
+        this.nome = this.nome.toUpperCase();
+        this.sexo = this.sexo.toUpperCase();
+    }
+    
+    public static final Aniversariante[] getAniversariantes(int idCliente)
+    {
+        
+        Conecta con = new Conecta();
+        String sql = "SELECT COUNT(*) AS LENGHT FROM ANIVERSARIANTES WHERE ID_CLIENTE = "+idCliente;
+        ResultSet rs = con.consulta(sql);
+        try {
+            if(rs.next())
+            {
+                int lenght = rs.getInt("LENGHT");
+                if(lenght > 0)
+                {
+                    Aniversariante[] ani = new Aniversariante[lenght];
+                    int i = 0;
+                    sql = "SELECT * FROM ANIVERSARIANTES WHERE ID_CLIENTE = "+idCliente+" ORDER BY NOME_ANIVERSARIANTE ASC";
+                    rs = con.consulta(sql);
+                    while(rs.next())
+                    {
+                        ani[i] = new Aniversariante();
+                        ani[i].setId_cliente(idCliente);
+                        ani[i].setId(rs.getInt("ID_ANIVERSARIANTE"));
+                        ani[i].setIdade(rs.getInt("IDADE_ANIVERSARIANTE"));
+                        ani[i].setNome(rs.getString("NOME_ANIVERSARIANTE"));
+                        ani[i].setSexo(rs.getString("SEXO_ANIVERSARIANTE"));
+
+                        i++;
+                    }
+                    con.Desconecta();
+                    return ani;
+                }
+                else
+                {
+                    con.Desconecta();
+                    return null;
+                }
+            }
+            else
+            {
+                con.Desconecta();
+                return null;
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(Aniversariante.class.getName()).log(Level.SEVERE, null, ex);
+            con.Desconecta();
+            return null;
+        }
+    }
+    
+    public static final Aniversariante getAniversariante(int idAniversariante)
+    {
+        
+        Conecta con = new Conecta();
+
+        Aniversariante ani = null;
+        String sql = "SELECT * FROM ANIVERSARIANTES WHERE ID_ANIVERSARIANTE = "+idAniversariante;
+        ResultSet rs = con.consulta(sql);
+        try {
+            while(rs.next())
+            {
+                ani = new Aniversariante();
+                ani.setId_cliente(rs.getInt("ID_CLIENTE"));
+                ani.setId(rs.getInt("ID_ANIVERSARIANTE"));
+                ani.setIdade(rs.getInt("IDADE_ANIVERSARIANTE"));
+                ani.setNome(rs.getString("NOME_ANIVERSARIANTE"));
+                ani.setSexo(rs.getString("SEXO_ANIVERSARIANTE"));
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(Aniversariante.class.getName()).log(Level.SEVERE, null, ex);
+            con.Desconecta();
+            return null;
+        }
+        con.Desconecta();
+        return ani;
+       
+    }
+    
+    public static final boolean deleteAniversariantes(int idCliente)
+    {
+        Conecta con = new Conecta();
+        String sql = "DELETE FROM ANIVERSARIANTES WHERE ID_CLIENTE = "+idCliente;
+        if(con.executa(sql))
+        {
+            con.Desconecta();
+            return true;
+        }
+        else
+        {
+            con.Desconecta();
+            return false;
+        }
+    }
+    
+    public static final boolean deleteAniversariante(int idAniversariante)
+    {
+        Conecta con = new Conecta();
+        String sql = "DELETE FROM ANIVERSARIANTES WHERE ID_ANIVERSARIANTE = "+idAniversariante;
+        System.out.println(sql);
+        if(con.executa(sql))
+        {
+            con.Desconecta();
+            return true;
+        }
+        else
+        {
+            con.Desconecta();
+            return false;
+        }
+    }
+    
+    public int salvar()
+    {
+        toUpperCase();
+        if(nome.length() > 4)
+        {
+            if(sexo == "M" || sexo == "F")
+            {
+                if(idade >0)
+                {
+                    if(id_cliente > -1)
+                    {
+                        if(aniversarianteExiste()== -1)
+                        {
+                            Conecta con = new Conecta();
+                            String sql = "INSERT INTO ANIVERSARIANTES (ID_CLIENTE,NOME_ANIVERSARIANTE,IDADE_ANIVERSARIANTE,SEXO_ANIVERSARIANTE) "
+                                    + "VALUES ("+id_cliente+", '"+nome+"', "+idade+", '"+sexo+"')";
+                            if(con.executa(sql))
+                            {
+                                return 0;
+                            }
+                            else
+                            {
+                                return 6;
+                            }
+                        }
+                        else
+                        {
+                            return 4;
+                        }
+                    }
+   

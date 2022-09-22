@@ -1,0 +1,245 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package Classes;
+
+import Banco.Conecta;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+/**
+ *
+ * @author Douglas
+ */
+public class Extra {
+    
+    private boolean selecionado;
+    private int id;
+    private String descricao;
+    private float valor;
+
+    public Extra() {
+        clearClass();
+    }
+
+    
+    public void clearClass()
+    {
+        this.id = -1;
+        this.descricao = "";
+        this.valor = -1;
+        this.selecionado = false;
+    }
+    
+    public static final Extra[] getExtras()
+    {
+        
+        Conecta con = new Conecta();
+        String sql = "SELECT COUNT(*) AS LENGHT FROM EXTRAS";
+        ResultSet rs = con.consulta(sql);
+        try {
+            if(rs.next())
+            {
+                int lenght = rs.getInt("LENGHT");
+                if(lenght > 0)
+                {
+                    Extra[] ext = new Extra[lenght];
+                    int i = 0;
+                    sql = "SELECT * FROM EXTRAS ORDER BY DESCRICAO_EXTRA ASC";
+                    rs = con.consulta(sql);
+                    while(rs.next())
+                    {
+                        ext[i] = new Extra();
+                        ext[i].setId(rs.getInt("ID_EXTRA"));
+                        ext[i].setDescricao(rs.getString("DESCRICAO_EXTRA"));
+                        ext[i].setValor(rs.getFloat("VALOR_EXTRA"));
+                        i++;
+                    }
+                    con.Desconecta();
+                    return ext;
+                }
+                else
+                {
+                    con.Desconecta();
+                    return null;
+                }
+            }
+            else
+            {
+                con.Desconecta();
+                return null;
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(Aniversariante.class.getName()).log(Level.SEVERE, null, ex);
+            con.Desconecta();
+            return null;
+        }
+    }
+    
+    public static final Extra[] getOcamentoExtras(int idOrcamento)
+    {
+        
+        Conecta con = new Conecta();
+        String sql = "SELECT COUNT(*) AS LENGHT FROM ORCAMENTO_EXTRAS WHERE ID_ORCAMENTO = "+idOrcamento;
+        ResultSet rs = con.consulta(sql);
+        try {
+            if(rs.next())
+            {
+                int lenght = rs.getInt("LENGHT");
+                if(lenght > 0)
+                {
+                    Extra[] ext = new Extra[lenght];
+                    int i = 0;
+                    sql = "SELECT * FROM ORCAMENTO_EXTRAS WHERE ID_ORCAMENTO = "+idOrcamento;
+                    rs = con.consulta(sql);
+                    while(rs.next())
+                    {
+                        int idExtra = rs.getInt("ID_EXTRA");
+                        String sql2 = "SELECT * FROM EXTRAS WHERE ID_EXTRA = "+idExtra+" ORDER BY DESCRICAO_EXTRA ASC";
+                        ResultSet rs2 = con.consulta(sql2);
+                        if(rs2.next())
+                        {
+                            ext[i] = new Extra();
+                            ext[i].setId(rs2.getInt("ID_EXTRA"));
+                            ext[i].setDescricao(rs2.getString("DESCRICAO_EXTRA"));
+                            ext[i].setValor(rs2.getFloat("VALOR_EXTRA"));
+                            i++;
+                        }
+                        
+                    }
+                    con.Desconecta();
+                    return ext;
+                }
+                else
+                {
+                    con.Desconecta();
+                    return null;
+                }
+            }
+            else
+            {
+                con.Desconecta();
+                return null;
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(Aniversariante.class.getName()).log(Level.SEVERE, null, ex);
+            con.Desconecta();
+            return null;
+        }
+    }
+    
+    public static final Extra getExtra(int idExtra)
+    {
+        
+        Conecta con = new Conecta();
+
+        Extra ext = null;
+        String sql = "SELECT * FROM EXTRAS WHERE ID_EXTRA = "+idExtra;
+        ResultSet rs = con.consulta(sql);
+        try {
+            while(rs.next())
+            {
+                ext = new Extra();
+                ext.setId(rs.getInt("ID_EXTRA"));
+                ext.setDescricao(rs.getString("DESCRICAO_EXTRA"));
+                ext.setValor(rs.getFloat("VALOR_EXTRA"));
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(Aniversariante.class.getName()).log(Level.SEVERE, null, ex);
+            con.Desconecta();
+            return null;
+        }
+        con.Desconecta();
+        return ext;
+       
+    }
+    
+    public int salvar()
+    {
+        toUpperCase();
+        if(!descricao.isEmpty() && valor > -1)
+        {
+            if(existe() == -1)
+            {
+                Conecta con = new Conecta();
+                String sql = "INSERT INTO EXTRAS (DESCRICAO_EXTRA,VALOR_EXTRA) VALUES ('"+descricao+"', "+valor+")";
+                if(con.executa(sql))
+                {
+                    return 0;
+                }
+                else
+                {
+                    return 3;
+                }
+            }
+            else
+            {
+                return 2;
+            }
+        }
+        else
+        {
+            return 1;
+        }
+    }
+    
+    public int update()
+    {
+        toUpperCase();
+        if(!descricao.isEmpty() && valor > -1 && id > -1)
+        {
+            int idExite = existe();
+            if(idExite == -1 || idExite == id)
+            {
+                Conecta con = new Conecta();
+                String sql = "UPDATE EXTRAS SET DESCRICAO_EXTRA = '"+descricao+"', VALOR_EXTRA = "+valor+" WHERE ID_EXTRA = "+id;
+                if(con.executa(sql))
+                {
+                    return 0;
+                }
+                else
+                {
+                    return 3;
+                }
+            }
+            else
+            {
+                return 2;
+            }
+        }
+        else
+        {
+            return 1;
+        }
+    }
+    
+    public static final boolean deleteExtra(int idExtra)
+    {
+        Conecta con = new Conecta();
+        String sql = "DELETE FROM EXTRAS WHERE ID_EXTRA = "+idExtra;
+        System.out.println(sql);
+        if(con.executa(sql))
+        {
+            con.Desconecta();
+            return true;
+        }
+        else
+        {
+            con.Desconecta();
+            return false;
+        }
+    }
+    
+    public void toUpperCase()
+    {
+        this.descricao = this.descricao.toUpperCase();
+    }
+    
+    public int existe()
+    {
+        Conecta con = new Conecta();
+        String sql = "SELECT ID_EXTRA FROM EXTRAS WHERE DESCRIC

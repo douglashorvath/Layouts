@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<package>
+    <name>Mage_Locale_en_US</name>
+    <version>1.7.0.1</version>
+    <stability>stable</stability>
+    <license uri="http://opensource.org/licenses/osl-3.0.php">OSL v3.0</license>
+    <channel>community</channel>
+    <extends/>
+    <summary>en_US locale</summary>
+    <description>en_US locale</description>
+    <notes>1.7.0.1</notes>
+    <authors><author><name>Magento Core Team</name><user>core</user><email>core@magentocommerce.com</email></author></authors>
+    <date>2012-06-20</date>
+    <time>11:27:20</time>
+    <contents><target name="magelocale"><dir name="en_US"><file name="Mage_AdminNotification.csv" hash="e2

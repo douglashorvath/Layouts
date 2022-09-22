@@ -1,0 +1,96 @@
+, l = selfAttrs.length; i < l; i++) {
+					selfAttr = selfAttrs[i];
+
+					// Clone everything except id
+					if (selfAttr.name !== 'id') {
+						cloneAttrs[cloneAttrs.length] = {name: selfAttr.name, value: selfAttr.value};
+						cloneAttrs.map[selfAttr.name] = selfAttr.value;
+					}
+				}
+
+				clone.attributes = cloneAttrs;
+			}
+
+			clone.value = self.value;
+			clone.shortEnded = self.shortEnded;
+
+			return clone;
+		},
+
+		/**
+		 * Wraps the node in in another node.
+		 *
+		 * @example
+		 * node.wrap(wrapperNode);
+		 *
+		 * @method wrap
+		 */
+		wrap : function(wrapper) {
+			var self = this;
+
+			self.parent.insert(wrapper, self);
+			wrapper.append(self);
+
+			return self;
+		},
+
+		/**
+		 * Unwraps the node in other words it removes the node but keeps the children.
+		 *
+		 * @example
+		 * node.unwrap();
+		 *
+		 * @method unwrap
+		 */
+		unwrap : function() {
+			var self = this, node, next;
+
+			for (node = self.firstChild; node; ) {
+				next = node.next;
+				self.insert(node, self, true);
+				node = next;
+			}
+
+			self.remove();
+		},
+
+		/**
+		 * Removes the node from it's parent.
+		 *
+		 * @example
+		 * node.remove();
+		 *
+		 * @method remove
+		 * @return {tinymce.html.Node} Current node that got removed.
+		 */
+		remove : function() {
+			var self = this, parent = self.parent, next = self.next, prev = self.prev;
+
+			if (parent) {
+				if (parent.firstChild === self) {
+					parent.firstChild = next;
+
+					if (next)
+						next.prev = null;
+				} else {
+					prev.next = next;
+				}
+
+				if (parent.lastChild === self) {
+					parent.lastChild = prev;
+
+					if (prev)
+						prev.next = null;
+				} else {
+					next.prev = prev;
+				}
+
+				self.parent = self.next = self.prev = null;
+			}
+
+			return self;
+		},
+
+		/**
+		 * Appends a new node as a child of the current node.
+		

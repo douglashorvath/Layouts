@@ -1,0 +1,312 @@
+/* reset */
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,dl,dt,dd,ol,nav ul,nav li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline;}
+article, aside, details, figcaption, figure,footer, header, hgroup, menu, nav, section {display: block;}
+ol,ul{list-style:none;margin:0px;padding:0px;}
+blockquote,q{quotes:none;}
+blockquote:before,blockquote:after,q:before,q:after{content:'';content:none;}
+table{border-collapse:collapse;border-spacing:0;}
+/* start editing from here */
+a{text-decoration:none;}
+.txt-rt{text-align:right;}/* text align right */
+.txt-lt{text-align:left;}/* text align left */
+.txt-center{text-align:center;}/* text align center */
+.float-rt{float:right;}/* float right */
+.float-lt{float:left;}/* float left */
+.clear{clear:both;}/* clear float */
+.pos-relative{position:relative;}/* Position Relative */
+.pos-absolute{position:absolute;}/* Position Absolute */
+.vertical-base{	vertical-align:baseline;}/* vertical align baseline */
+.vertical-top{	vertical-align:top;}/* vertical align top */
+.underline{	padding-bottom:5px;	border-bottom: 1px solid #eee; margin:0 0 20px 0;}/* Add 5px bottom padding and a underline */
+nav.vertical ul li{	display:block;}/* vertical menu */
+nav.horizontal ul li{	display: inline-block;}/* horizontal menu */
+img{max-width:100%;}
+/*end reset*/
+body{
+	font-family: "verdana", Arial, Helvetica, sans-serif;
+	font-size:12px;
+}
+.wrap{
+	padding: 10px;
+}
+/*top header*/
+.top-bg{
+	background: #726128;
+}
+.top-hader{
+	padding:4px 0px;
+}
+.top-header-left{
+	float:left;
+}
+.top-header-left p,.top-header-right p{
+	color:#fff;
+}
+.top-header-right{
+	float:right;
+}
+.top-header-right p a{
+	color:rgb(250, 199, 24);
+}
+.top-header-right p a:hover{
+	color:#fff;
+}
+/*end-top header*/
+.header-bg{
+	background: #9F8838;
+}
+/*header*/
+.header{
+	text-align:center;
+	padding:8px 0;
+}
+/*menu*/
+.menu-bg{
+	border-top:4px solid #726128;
+	background:rgb(224, 224, 224);
+}
+.drp-dwn{
+	display: inline-block;
+	width: 100%;
+	position: relative;
+	top: 0px;
+}
+.drp-dwn select {
+	padding: 4px;
+	outline: none;
+	display: block !important;
+	width: 100%;
+	color: #555;
+	border: 1px solid rgb(192, 192, 192);
+	background: rgba(216, 216, 216, 0.32);
+	cursor: pointer;
+}
+/*slider*/
+.flexslider{
+	text-align:center;
+}
+/*end slider*/
+/*content-bg*/
+.content-bg{
+	border-top: 1px solid rgb(243, 243, 243);
+	background: rgb(250, 250, 250);
+}
+.main{
+	text-align: center;
+	border-bottom: 2px solid rgb(236, 236, 235);
+}
+.main h2{
+	margin:6px 0;
+	font-size: 22px;
+	color: #726128;
+}
+.main h3{
+	font-size:16px;
+	color: #555;
+	margin-bottom: 6px;
+}
+.main h3 span{
+	color:rgb(194, 154, 20);
+}
+.top{
+	margin-top: 10px;
+}
+.grid h4{
+	margin: 6px 0;
+}
+p{
+	color:#555;
+	line-height: 1.5em;
+}
+.btn{
+	text-align:center;
+	margin:14px 0;
+}
+.btn1{
+	text-align:left;
+	margin-top:10px;
+}
+.btn img,.btn1 img{
+	margin-top:-2px;
+	vertical-align: middle;
+	margin-right:6px;
+}
+.btn a,.btn1 a{
+	font-size:13px;
+	color:#716128;
+	text-transform:capitalize;
+}
+.btn img:hover,.btn1 img:hover{
+		opacity:0.9;
+}
+.btn a:hover,.btn1 a:hover{
+	color: rgb(194, 154, 20);
+}
+/*grids*/
+.grid{
+	text-align: center;
+}
+.grid img,.abt img,.det-pic img,.flexslider img{
+	border:6px solid #726128;
+	cursor:pointer;
+}
+h2{
+	color:#fff;
+}
+h3{
+	color: #726128;
+}
+h4{
+	color:#555;
+}
+h2,h3,h4{
+	font-size:22px;
+	text-transform: uppercase;
+	display: block;
+}
+/*  GRID OF Four   ============================================================================= */
+.images_1_of_4  p {
+	text-align:center;
+}
+.images_1_of_4 .button{
+	margin-top:.3em;
+	line-height:1.5em;
+}
+/*end content*/
+/*footer*/
+.footer-bg{
+	background: #726128;
+	border-top:1px solid rgb(243, 244, 245);
+}
+.nav1{
+	margin-top: 4px;
+}
+.nav1 li a{
+	color: rgb(206, 178, 79);
+	display:inline;
+	line-height: 2.0em;
+	font-size: 13px;
+}
+.nav1 li a:hover{
+	color:rgb(187, 162, 64);	
+}
+.nav1 li a img{
+	vertical-align: middle;
+	margin-bottom: 4px;
+	margin-right: 10px;
+}
+.nav1 li a img:hover{
+	opacity: 0.6;
+}
+/*  GRID OF FOUR   ============================================================================= */
+
+/*end footer*/
+.footer1-bg{
+	background: rgb(109, 92, 36);
+}
+.footer1{
+	text-align:center;
+	padding: 20px 0;
+}
+.footer1 p{
+	color:#fff;
+}
+.footer1 p.w3-link a{
+	color: rgb(173, 148, 63);
+}
+.footer1 p.w3-link a:hover{
+	text-decoration:underline;
+}
+/*About*/
+/*  GRID OF Content with Image   ============================================================================= */
+.grid1{
+	margin:8px 0;
+}	
+.images_3_of_1{
+	text-align:center;
+}
+.span_2_of_3 .button{
+	margin-top:.3em;
+	line-height:1.5em;
+}
+/*  Contact Form  ============================================================================= */
+.span_2_of_3  h3,.span_1_of_3  h3 {
+	color:#726128;
+}
+.contact-form{
+	position:relative;
+	padding-bottom:30px;
+}
+.contact-form div{
+	padding:5px 0;
+}
+.contact-form span{
+	display:block;
+	font-size:13px;
+	color: #333;
+	padding-bottom:5px;
+}
+.contact-form input[type="text"],.contact-form textarea{
+    padding:8px;
+	display:block;
+	width:92%;
+	background:#eee;
+	border: none;
+	outline:none;
+	color:#464646;
+	-webkit-appearance:none;
+}
+.contact-form textarea{
+	resize:none;
+	height:120px;		
+}
+.contact-form input[type="submit"]{
+	padding:7px 20px;
+	color:#FFF;
+	cursor:pointer;
+	background: #726128;
+	position:absolute;
+    right:0;
+}
+.contact-form input[type="submit"]:hover{
+	background: #9F8838;
+}
+.contact-form input[type="submit"]:active{
+	background: #9F8838;  
+}
+.company_address{
+	padding-top:12px;
+}
+.company_address p{
+	margin-top:8px;
+}
+.company_address p span{
+	text-decoration:underline;
+	color:#333;
+	cursor:pointer;
+}
+.map{
+	border:1px solid #C7C7C7;
+	margin-top:10px;
+}
+form{
+	margin-top:6px;
+}
+/*details*/
+.det-pic{
+	margin-top:10px;
+}
+.det-para{
+	margin:10px 0;
+}
+.det-btm{
+	padding-bottom: 30px;
+}
+/*404*/
+.page{
+	text-align:center;
+}
+.page h5{
+	font-size: 8em;
+	color:#726128;
+}

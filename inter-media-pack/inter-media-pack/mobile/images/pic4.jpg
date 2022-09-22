@@ -1,0 +1,211 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package Content.Funcionario;
+
+import Content.Funcionario.Funcionario;
+import Banco.Conecta;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+/**
+ *
+ * @author Douglas
+ */
+public class Usuario {
+    
+    private int id;
+    private String usuario;
+    private String senha;
+    private int idFuncionario;
+    private int permissao;
+    private int ativo;
+
+    public Usuario() {
+       clearClass();
+    }
+    
+    public void clearClass()
+    {
+        this.usuario = "";
+        this.senha = "";
+        this.idFuncionario = -1;
+        this.permissao = -1;
+    }
+    
+    public static final Usuario getUsuario(String login,String senha)
+    {
+        if(!login.isEmpty() && !senha.isEmpty())
+        {
+            Conecta con = new Conecta();
+            String sql = "SELECT * FROM USUARIOS WHERE LOGIN = '"+login+"' AND SENHA = '"+senha+"' AND ATIVO = 1";
+            ResultSet rs = con.consulta(sql);
+            try {
+                if(rs.next())
+                {
+                    Usuario user = new Usuario();
+                    user.setId(rs.getInt("ID_USUARIO"));
+                    user.setIdFuncionario(rs.getInt("ID_FUNCIONARIO"));
+                    user.setPermissao(rs.getInt("PERMISSAO"));
+                    user.setAtivo(rs.getInt("ATIVO"));
+                    user.setUsuario(login);
+                    con.Desconecta();
+                    return user;
+                }
+                else
+                {
+                    con.Desconecta();
+                    return null;
+                }
+            } catch (SQLException ex) {
+                Logger.getLogger(Usuario.class.getName()).log(Level.SEVERE, null, ex);
+                con.Desconecta();
+                return null;
+            }
+        }
+        else
+        {
+            return null;
+        }
+    }
+    
+    public static final Usuario getUsuarioFuncionario(int idFuncionario)
+    {
+        if(idFuncionario > -1)
+        {
+            Conecta con = new Conecta();
+            String sql = "SELECT * FROM USUARIOS WHERE ID_FUNCIONARIO = "+idFuncionario;
+            ResultSet rs = con.consulta(sql);
+            try {
+                if(rs.next())
+                {
+                    Usuario user = new Usuario();
+                    user.setId(rs.getInt("ID_USUARIO"));
+                    user.setIdFuncionario(rs.getInt("ID_FUNCIONARIO"));
+                    user.setPermissao(rs.getInt("PERMISSAO"));
+                    user.setAtivo(rs.getInt("ATIVO"));
+                    user.setUsuario(rs.getString("LOGIN"));
+                    con.Desconecta();
+                    return user;
+                }
+                else
+                {
+                    con.Desconecta();
+                    return null;
+                }
+            } catch (SQLException ex) {
+                Logger.getLogger(Usuario.class.getName()).log(Level.SEVERE, null, ex);
+                con.Desconecta();
+                return null;
+            }
+        }
+        else
+        {
+            return null;
+        }
+    }
+    
+    public static final Usuario getUsuario(int idUsuario)
+    {
+        if(idUsuario > -1)
+        {
+            Conecta con = new Conecta();
+            String sql = "SELECT * FROM USUARIOS WHERE ID_USUARIO = "+idUsuario;
+            ResultSet rs = con.consulta(sql);
+            try {
+                if(rs.next())
+                {
+                    Usuario user = new Usuario();
+                    user.setId(rs.getInt("ID_USUARIO"));
+                    user.setIdFuncionario(rs.getInt("ID_FUNCIONARIO"));
+                    user.setPermissao(rs.getInt("PERMISSAO"));
+                    user.setAtivo(rs.getInt("ATIVO"));
+                    user.setUsuario(rs.getString("LOGIN"));
+                    con.Desconecta();
+                    return user;
+                }
+                else
+                {
+                    con.Desconecta();
+                    return null;
+                }
+            } catch (SQLException ex) {
+                Logger.getLogger(Usuario.class.getName()).log(Level.SEVERE, null, ex);
+                con.Desconecta();
+                return null;
+            }
+        }
+        else
+        {
+            return null;
+        }
+    }
+    
+    public static final boolean deleteUsuario(int idUsuario)
+    {
+        Conecta con = new Conecta();
+        String sql = "DELETE FROM USUARIOS WHERE ID_USUARIO = "+idUsuario;
+        if(con.executa(sql))
+        {
+            con.Desconecta();
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+    
+    public static final boolean deleteUsuarioFuncionario(int idFuncionario)
+    {
+        Conecta con = new Conecta();
+        String sql = "DELETE FROM USUARIOS WHERE ID_FUNCIONARIO = "+idFuncionario;
+        if(con.executa(sql))
+        {
+            con.Desconecta();
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+    
+    public static final boolean insertUsuario(Usuario user)
+    {
+        if(user.getIdFuncionario() > -1 && user.getUsuario().length() > 3 && user.getSenha().length() > 3 && user.getPermissao() > -1)
+        {
+            
+            Conecta con = new Conecta();
+            String del = "DELETE FROM USUARIOS WHERE ID_FUNCIONARIO = "+user.getIdFuncionario();
+            con.executa(del);
+            
+            String sql = "INSERT INTO USUARIOS (ID_FUNCIONARIO,LOGIN,SENHA,PERMISSAO,ATIVO) VALUES ("+user.getIdFuncionario()+", '"+user.getUsuario()+"', '"+user.getSenha()+"', "+user.getPermissao()+",1)";
+            if(con.executa(sql))
+            {
+                con.Desconecta();
+                return true;
+            }
+            else
+            {
+                con.Desconecta();
+                return false;
+            }
+        }
+        else
+        {
+            return false;
+        }
+    }
+    
+    public static final boolean updateUsuario(Usuario novoUsuario, int idUsuario)
+    {
+        if(novoUsuario != null && idUsuario > -1)
+        {
+            if(novoUsuario.getSenha().length()>3 && novoUsuario.getUsuario().length()>3 && novoUsuario.getPermissao()>-1)
+            {
+                Conecta con = new Conecta();

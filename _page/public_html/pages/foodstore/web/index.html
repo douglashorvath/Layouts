@@ -1,0 +1,175 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Food-Store Template | Home :: CaffeineDev</title>
+<link href="web/css/style.css" rel="stylesheet" type="text/css"  media="all" />
+<link href='http://fonts.googleapis.com/css?family=Economica|Quantico' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Domine|Oranienbaum|Monda|Text+Me+One|Nova+Square' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Domine|Oranienbaum|Monda|Text+Me+One|Nova+Square|Iceland|Junge' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Domine|Oranienbaum|Monda|Text+Me+One|Nova+Square|Iceland|Junge|Roboto+Condensed' rel='stylesheet' type='text/css'>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<link rel="stylesheet" href="web/css/craftyslide.css" />
+<SCRIPT src="web/js/jquery.min.js" type=text/javascript></SCRIPT>
+<SCRIPT type=text/javascript>
+$(document).ready(function() {	
+	$("#menu2 li").prepend("<span></span>"); //Throws an empty span tag right before the a tag
+	
+	$("#menu2 li").each(function() { //For each list item...
+		var linkText = $(this).find("a").html(); //Find the text inside of the a tag
+		$(this).find("span").show().html(linkText); //Add the text in the span tag
+	}); 
+	
+	$("#menu2 li").hover(function() {	//On hover...
+		$(this).find("span").stop().animate({ 
+			marginTop: "-40" //Find the span tag and move it up 40 pixels
+		}, 250);
+	} , function() { //On hover out...
+		$(this).find("span").stop().animate({
+			marginTop: "0" //Move the span back to its original state (0px)
+		}, 250);
+	});	
+});
+</SCRIPT>
+</head>
+	<body>
+	<div  class="wrap">
+		<div class="header">
+			<div class="logo">
+				<a href="index.html"><img src="web/images/logo.png" title="logo"/></a>
+			</div>
+		</div>
+		<div class="clear"> </div>
+		<div id="menu2">
+			<ul>
+				<li><a href="index.html">HOME</a></li>
+				<li><a href="products.html">PARCEIROS</a></li>
+				<li><a href="contact.html">PEÇA JÁ</a></li>
+                                <li><a href="#">SAIBA MAIS</a></li>
+                                <li><a href="contact.html">ENTRAR</a></li>
+			</ul>
+				<div class="cls"> </div>
+			</div>
+			<div class="clear"> </div>
+		<div id="slideshow">
+	        <ul>
+	          <li>
+	            <img src="web/images/slide1.jpg" alt="" title="Lorem ipsum dolor sit amet. " />
+	          </li>
+	          <li>
+	            <img src="web/images/slide2.jpg" alt="" title="labore et dolore magna aliqua. " />
+	          </li>
+	          <li>           
+	            <img src="web/images/slide3.jpg" alt="" title="labore et dolore magna aliqua. " />
+	          </li>
+	          <li>           
+	            <img src="web/images/slide2.jpg" alt="" title="Lorem ipsum dolor sit amet. " />
+	          </li>
+	          <li>           
+	            <img src="web/images/slide1.jpg" alt="" title="Lorem ipsum dolor sit ametsed do eiusmod tempor . " />
+	          </li>	                         
+	        </ul>
+      </div>   
+     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+      <script src="web/js/craftyslide.min.js"></script>
+     	<script>
+        $("#slideshow").craftyslide();
+      </script> 
+      <div class="clear"> </div>  
+	<div class="para">
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vel mauris a diam convallis dapibus<br>
+			vel eget tortor. Vestibulum ante ipsum primis in faucibus orci huctus.</p>
+	</div>
+	<div class="clear"> </div>
+	<div class="boxs">
+		<div class="clear"> </div>
+		<div class="box1">
+			<ul>
+				<li><h2>Welcome</h2></li>
+				<li><img src="web/images/page1_img1.jpg" title="img1"/></li>
+				<li><p>Lorem ipsum dolor sit amet, consectetur
+				adipiscing elit. Aenean ac tortor at tellus
+				feugiat congue quis ut nunc.</p></li>
+				<div class="clear"> </div>
+				<li class="more"><a href="#">MORE</a></li>
+			</ul>
+		</div>
+		<div style="margin-left:60px;line-height:1.5em;" class="box1">
+			<ul>
+				<li><h2>Our Services</h2></li>
+				<li class="list2">
+					<ul>
+						<li><a href="#"><img src="web/images/marker2.jpg" title="marker"/>&nbsp;Family Getaway</a></li>
+						<li><a href="#"><img src="web/images/marker2.jpg" title="marker"/>&nbsp;Discover Our Destination</a></li>
+						<li><a href="#"><img src="web/images/marker2.jpg" title="marker"/>&nbsp;Just Married</a></li>
+						<li><a href="#"><img src="web/images/marker2.jpg" title="marker"/>&nbsp;Complimentary in-room Internet access</a></li>
+						<li><a href="#"><img src="web/images/marker2.jpg" title="marker"/>&nbsp;Dream Suite</a></li>
+						<li><a href="#"><img src="web/images/marker2.jpg" title="marker"/>&nbsp;Romantic Getaway</a></li>
+						<li><a href="#"><img src="web/images/marker2.jpg" title="marker"/>&nbsp;15% Point bonus on each stay</a></li>
+						<div class="clear"> </div>
+						<li class="more"><a href="#">MORE</a></li>
+					</ul>
+				</li>
+		</ul>
+		</div>
+		<div class="box1">
+			<ul>
+				<li><h2>Our Restaurant</h2></li>
+				<li><img src="web/images/page1_img2.jpg" title="img1"/></li>
+				<li><p>Lorem ipsum dolor sit amet, consectetur
+				adipiscing elit. Aenean ac tortor at tellus
+				feugiat congue quis ut nunc.</p></li>
+				<div class="clear"> </div>
+				<li class="more"><a href="#">MORE</a></li>
+			</ul>
+			<div class="clear"> </div> 
+		</div>
+		<div class="clear"></div>
+	</div>
+	</div>
+		<div class="clear"> </div>
+		<div class="clear"> </div>
+	<div class="footer">
+		<div style="background:none;box-shadow:none;" class="wrap">
+		<ul>
+			<li><h4>NOVOS PARCEIROS</h4></li>
+			<li><a href="#">FEIJOADA TIA JOANA</a></li>
+			<li><a href="#">MARMITA CASA DO CARALHO</a></li>
+			<li><a href="#">PIZZARIA DO TIO ZÉ</a></li>
+			<li><a href="#">DOBRADINHA DO PORCÃO</a></li>
+		</ul>
+		<ul>
+			<li><h4>NOSSOS SERVIÇOS</h4></li>
+			<li><a href="#">CADASTRO DE CLIENTE</a></li>
+			<li><a href="#">CADASTRO DE LOGISTA</a></li>
+			<li><a href="#">PEÇA SEU BANNER</a></li>
+			<li><a href="#">TENHA SEU SITE</a></li>
+		</ul>
+		<ul>
+			<li><h4>MAIS PEDIDOS</h4></li>
+			<li><a href="#">LANCHE</a></li>
+			<li><a href="#">PIZZA</a></li>
+			<li><a href="#">MARMITA</a></li>
+			<li><a href="#">FEIJOADA</a></li>
+		</ul>
+		<ul>
+			<li><h4>CATEGORIAS</h4></li>
+			<li><a href="#">RESTAURANTES</a></li>
+			<li><a href="#">LANCHONETES</a></li>
+			<li><a href="#">PIZZARIAS</a></li>
+			<li><a href="#">MARMITEX</a></li>
+                        <li><a href="#">ESPETINHOS</a></li>
+		</ul>
+		<ul class="last">
+			<li><h4>SIGA-NOS</h4></li>
+			<li><a href="http://www.facebook.com/caffeinedev"><img src="web/images/facebook.png" title="facebook"></a></li>
+		</ul>
+		<div class="clear"> </div>
+		<div class="copy-right">
+			<p>© 2013 Todos os Direitos Reservados | Design by <a href="http://www.caffeinedev.com.br">CaffeineDev</a></p>
+		</div>
+	</div>
+	 </div>
+</body>
+</html>
+

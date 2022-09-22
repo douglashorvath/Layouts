@@ -1,0 +1,145 @@
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Feed_Writer
+ * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: Feed.php 20096 2010-01-06 02:05:09Z bkarwin $
+ */
+ 
+/**
+ * @category   Zend
+ * @package    Zend_Feed_Writer
+ * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Feed_Writer_Extension_ITunes_Feed
+{
+    /**
+     * Array of Feed data for rendering by Extension's renderers
+     *
+     * @var array
+     */
+    protected $_data = array();
+    
+    /**
+     * Encoding of all text values
+     *
+     * @var string
+     */
+    protected $_encoding = 'UTF-8';
+    
+    /**
+     * Set feed encoding
+     * 
+     * @param  string $enc 
+     * @return Zend_Feed_Writer_Extension_ITunes_Feed
+     */
+    public function setEncoding($enc)
+    {
+        $this->_encoding = $enc;
+        return $this;
+    }
+    
+    /**
+     * Get feed encoding
+     * 
+     * @return string
+     */
+    public function getEncoding()
+    {
+        return $this->_encoding;
+    }
+    
+    /**
+     * Set a block value of "yes" or "no". You may also set an empty string.
+     *
+     * @param  string
+     * @return Zend_Feed_Writer_Extension_ITunes_Feed
+     */
+    public function setItunesBlock($value)
+    {
+        if (!ctype_alpha($value) && strlen($value) > 0) {
+            #require_once 'Zend/Feed/Exception.php';
+            throw new Zend_Feed_Exception('invalid parameter: "block" may only'
+            . ' contain alphabetic characters');
+        }
+        if (iconv_strlen($value, $this->getEncoding()) > 255) {
+            #require_once 'Zend/Feed/Exception.php';
+            throw new Zend_Feed_Exception('invalid parameter: "block" may only'
+            . ' contain a maximum of 255 characters');
+        }
+        $this->_data['block'] = $value;
+        return $this;
+    }
+    
+    /**
+     * Add feed authors
+     * 
+     * @param  array $values 
+     * @return Zend_Feed_Writer_Extension_ITunes_Feed
+     */
+    public function addItunesAuthors(array $values)
+    {
+        foreach ($values as $value) {
+            $this->addItunesAuthor($value);
+        }
+        return $this;
+    }
+    
+    /**
+     * Add feed author
+     * 
+     * @param  string $value 
+     * @return Zend_Feed_Writer_Extension_ITunes_Feed
+     */
+    public function addItunesAuthor($value)
+    {
+        if (iconv_strlen($value, $this->getEncoding()) > 255) {
+            #require_once 'Zend/Feed/Exception.php';
+            throw new Zend_Feed_Exception('invalid parameter: any "author" may only'
+            . ' contain a maximum of 255 characters each');
+        }
+        if (!isset($this->_data['authors'])) {
+            $this->_data['authors'] = array();
+        }
+        $this->_data['authors'][] = $value;   
+        return $this;
+    }
+    
+    /**
+     * Set feed categories
+     * 
+     * @param  array $values 
+     * @return Zend_Feed_Writer_Extension_ITunes_Feed
+     */
+    public function setItunesCategories(array $values)
+    {
+        if (!isset($this->_data['categories'])) {
+            $this->_data['categories'] = array();
+        }
+        foreach ($values as $key=>$value) {
+            if (!is_array($value)) {
+                if (iconv_strlen($value, $this->getEncoding()) > 255) {
+                    #require_once 'Zend/Feed/Exception.php';
+                    throw new Zend_Feed_Exception('invalid parameter: any "category" may only'
+                    . ' contain a maximum of 255 characters each');
+                }
+                $this->_data['categories'][] = $value;
+            } else {
+                if (iconv_strlen($key, $this->getEncoding()) > 255) {
+                    #require_once 'Zend/Feed/Exception.php';
+                    throw new Zend_Feed_Exception('invalid parameter: any "category" may only'
+                    . ' c

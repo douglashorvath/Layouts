@@ -1,0 +1,280 @@
+/* reset */
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,dl,dt,dd,ol,nav ul,nav li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline;}
+article, aside, details, figcaption, figure,footer, header, hgroup, menu, nav, section {display: block;}
+ol,ul{list-style:none;margin:0px;padding:0px;}
+blockquote,q{quotes:none;}
+blockquote:before,blockquote:after,q:before,q:after{content:'';content:none;}
+table{border-collapse:collapse;border-spacing:0;}
+/* start editing from here */
+a{text-decoration:none;}
+.txt-rt{text-align:right;}/* text align right */
+.txt-lt{text-align:left;}/* text align left */
+.txt-center{text-align:center;}/* text align center */
+.float-rt{float:right;}/* float right */
+.float-lt{float:left;}/* float left */
+.clear{clear:both;}/* clear float */
+.pos-relative{position:relative;}/* Position Relative */
+.pos-absolute{position:absolute;}/* Position Absolute */
+.vertical-base{	vertical-align:baseline;}/* vertical align baseline */
+.vertical-top{	vertical-align:top;}/* vertical align top */
+.underline{	padding-bottom:5px;	border-bottom: 1px solid #eee; margin:0 0 20px 0;}/* Add 5px bottom padding and a underline */
+nav.vertical ul li{	display:block;}/* vertical menu */
+nav.horizontal ul li{	display: inline-block;}/* horizontal menu */
+img{max-width:100%;}
+/*end reset*/
+body{
+	font-family: "verdana", Arial, Helvetica, sans-serif;
+	font-size:13px;
+	color:#fff;
+}
+.wrap{
+	padding: 10px;
+}
+.header-bg{
+	background:rgb(94, 90, 81);
+}
+.logo{
+	text-align:center;
+}
+/*menu*/
+.drp-dwn{
+	display: inline-block;
+	width: 100%;
+	position: relative;
+	top: 0px;
+	padding: 8px 0 0;	
+}
+.drp-dwn select {
+	padding: 4px;
+	outline: none;
+	display: block !important;
+	width: 100%;
+	color: #fff;
+	border: 1px solid rgb(110, 117, 85);
+	background: #565249;
+	cursor: pointer;
+}
+/*slider*/
+.slider-bg{
+	background: #565249;
+}
+.flexslider{
+	text-align:center;
+}
+/*end slider*/
+/*content*/
+.content-bg{
+	background:#5F5D51;
+}
+.side-bar-from p{
+	line-height: 2.5em;
+}
+.side-bar-from input[type="text"]{
+	width:96%;
+	height: 15px;
+	color: rgba(180, 192, 21, 0.71);
+	background:none;
+	vertical-align: top;
+	padding: 4px 0px 4px 10px;
+	display: inline-block;
+	border: 1px solid rgba(170, 170, 170, 0.4);
+	outline:none;
+}
+.side-bar-from input[type="submit"],.side-bar-from input[type="reset"]{
+	margin:14px 0;
+	text-transform: capitalize;
+	padding: 6px 20px;
+	color: #FFF;
+	cursor: pointer;
+	background: #676056 url('../images/large-button-overlay.png');
+	border: 1px solid rgb(56, 56, 54);
+}
+.side-bar-from input[type="submit"]:hover,.side-bar-from input[type="reset"]:hover{
+	background: rgb(109, 102, 92) url('../images/large-button-overlay.png');
+}
+/*  GRID OF THREE   ============================================================================= */
+.btn{
+	margin: 10px 0;
+}
+.btn img,.btn1 img{
+	margin-top:-2px;
+	vertical-align: middle;
+	margin-right:6px;
+}
+.btn a,.btn1 a{
+	font-size: 13px;
+	color: rgb(180, 192, 21);
+	text-transform:capitalize;
+}
+.btn img:hover,.btn1 img:hover{
+		opacity:0.9;
+}
+.btn a:hover,.btn1 a:hover{
+	color: rgb(214, 213, 186);
+}
+/*heading-styles*/
+h3{
+	font-size: 22px;
+	color:#efefef;
+}
+/*paragraph-styles*/
+p{
+	font-size:13px;
+	line-height: 1.5em;
+	color:rgb(214, 213, 186);
+}
+/*  GRID OF Content and sidebar   ============================================================================= */
+.rsidebar p a{
+	color: rgb(214, 213, 186);
+}
+.rsidebar p a:hover{
+	color: rgb(173, 177, 114);
+}
+.rsidebar p a img{
+	vertical-align:top;
+	margin-right: 10px;
+}
+.top{
+	margin-top: 10px;
+}
+.btm{
+	margin-bottom: 10px;
+}
+/*end content*/
+/*footer*/
+.footer-bg{
+	background:rgb(77, 75, 67);
+}
+.nav1 li a,.nav2 li a{
+	color: rgb(214, 213, 186);
+	display:inline;
+	line-height: 2.4em;
+	font-size:13px;
+}
+.nav1 li a:hover,.nav2 li a:hover{
+	color:rgb(173, 177, 114);
+}
+.nav1 li a img{
+	vertical-align: middle;
+	margin-bottom: 4px;
+	margin-right: 10px;
+}
+.nav1 li a img:hover{
+	opacity: 0.6;
+}
+.nav2 li{
+	display: block;
+	line-height: 2.4em;
+	font-size: 13px;
+	color: rgb(214, 213, 186);
+}
+.nav2 li a span{
+	font-size:14px;
+}
+/*  GRID OF FOUR   ============================================================================= */
+.nav1,.nav2{
+	margin-top:4px;
+}
+/*footer1*/
+.footer1-bg{
+	background:url('../images/header-bg.jpg');
+}
+.footer1{
+	text-align:center;
+	padding: 15px 0;
+}
+.footer1 p.w3-link a{
+	color: #BECB0C;
+}
+.footer1 p.w3-link a:hover{
+	text-decoration:underline;
+}
+/*about*/
+/*  GRID OF Content with Image   ============================================================================= */
+.images_3_of_1 {
+	text-align:center;
+}
+/*service*/
+/*  GRID OF Four   ============================================================================= */
+.images_1_of_4 {
+	text-align:center;
+}
+.images_1_of_4 .button{
+	margin-top:.3em;
+	line-height:1.9em;
+}
+/*  Contact Form  ============================================================================= */
+.contact-form{
+	position:relative;
+	padding-bottom:30px;
+}
+.contact-form div{
+	padding:5px 0;
+}
+.contact-form span{
+	display:block;
+	font-size:13px;
+	color: rgb(214, 213, 186);
+	padding-bottom:5px;
+}
+.contact-form input[type="text"],.contact-form textarea{
+	color: rgba(180, 192, 21, 0.71);
+    padding:8px;
+	display:block;
+	width:92%;
+	background: rgba(174, 175, 164, 0.04);
+	border: 1px solid rgba(255, 255, 255, 0.18);
+	outline:none;
+	-webkit-appearance:none;
+}
+.contact-form textarea{
+	resize:none;
+	height:120px;		
+}
+.contact-form input[type="submit"]{
+	padding: 7px 20px;
+	color: #555;
+	cursor: pointer;
+	position: absolute;
+	right: 0;
+	border: 1px solid rgb(90, 100, 12);
+	background: rgb(198,212,1);
+}
+.contact-form input[type="submit"]:hover{
+	background: rgb(195,198,13); 
+    outline: 0 none;
+}
+.company_address{
+	padding-top:12px;
+}
+.company_address p{
+	margin-top: 6px;
+}
+.company_address p span{
+	cursor:pointer;
+}
+.map{
+	border: 1px solid rgb(124, 124, 114);
+	margin-top:10px;
+}
+form{
+	margin-top:6px;
+}
+/*details*/
+.det-pic{
+	text-align:center;
+	margin-top:10px;
+}
+.det-para{
+	padding:4px 0
+}
+.det-btm{
+	padding-bottom: 30px;
+}
+/*404*/
+.page{
+	text-align:center;
+}
+.page h5{
+	font-size: 6em;
+}

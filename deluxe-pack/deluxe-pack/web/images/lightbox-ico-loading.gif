@@ -1,0 +1,123 @@
+>Quote($db->getNullDate());
+				$nowDate = $db->Quote(JFactory::getDate()->toSql());
+
+				// Filter by published state.
+				$published = $this->getState('filter.published');
+				$archived = $this->getState('filter.archived');
+				if (is_numeric($published)) {
+					$query->where('(a.published = ' . (int) $published . ' OR a.published =' . (int) $archived . ')');
+					$query->where('(a.publish_up = ' . $nullDate . ' OR a.publish_up <= ' . $nowDate . ')');
+					$query->where('(a.publish_down = ' . $nullDate . ' OR a.publish_down >= ' . $nowDate . ')');
+				}
+
+				$db->setQuery($query);
+
+				$data = $db->loadObject();
+
+				if ($error = $db->getErrorMsg()) {
+					throw new JException($error);
+				}
+
+				if (empty($data)) {
+					throw new JException(JText::_('COM_CONTACT_ERROR_CONTACT_NOT_FOUND'), 404);
+				}
+
+				// Check for published state if filter set.
+				if (((is_numeric($published)) || (is_numeric($archived))) && (($data->published != $published) && ($data->published != $archived)))
+				{
+					JError::raiseError(404, JText::_('COM_CONTACT_ERROR_CONTACT_NOT_FOUND'));
+				}
+
+				// Convert parameter fields to objects.
+				$registry = new JRegistry;
+				$registry->loadString($data->params);
+				$data->params = clone $this->getState('params');
+				$data->params->merge($registry);
+
+				$registry = new JRegistry;
+				$registry->loadString($data->metadata);
+				$data->metadata = $registry;
+
+				// Compute access permissions.
+				if ($access = $this->getState('filter.access')) {
+					// If the access filter has been set, we already know this user can view.
+					$data->params->set('access-view', true);
+				}
+				else {
+					// If no access filter is set, the layout takes some responsibility for display of limited information.
+					$user = JFactory::getUser();
+					$groups = $user->getAuthorisedViewLevels();
+
+					if ($data->catid == 0 || $data->category_access === null) {
+						$data->params->set('access-view', in_array($data->access, $groups));
+					}
+					else {
+						$data->params->set('access-view', in_array($data->access, $groups) && in_array($data->category_access, $groups));
+					}
+				}
+
+				$this->_item[$pk] = $data;
+			}
+			catch (JException $e)
+			{
+				$this->setError($e);
+				$this->_item[$pk] = false;
+			}
+
+		}
+
+		if ($this->_item[$pk])
+		{
+			if ($extendedData = $this->getContactQuery($pk)) {
+				$this->_item[$pk]->articles = $extendedData->articles;
+				$this->_item[$pk]->profile = $extendedData->profile;
+			}
+		}
+  		return $this->_item[$pk];
+
+	}
+
+	protected function getContactQuery($pk = null)
+	{
+		// TODO: Cache on the fingerprint of the arguments
+		$db		= $this->getDbo();
+		$user	= JFactory::getUser();
+		$pk = (!empty($pk)) ? $pk : (int) $this->getState('contact.id');
+
+		$query	= $db->getQuery(true);
+		if ($pk) {
+			//sqlsrv changes
+			$case_when = ' CASE WHEN ';
+			$case_when .= $query->charLength('a.alias');
+			$case_when .= ' THEN ';
+			$a_id = $query->castAsChar('a.id');
+			$case_when .= $query->concatenate(array($a_id, 'a.alias'), ':');
+			$case_when .= ' ELSE ';
+			$case_when .= $a_id.' END as slug';
+
+			$case_when1 = ' CASE WHEN ';
+			$case_when1 .= $query->charLength('cc.alias');
+			$case_when1 .= ' THEN ';
+			$c_id = $query->castAsChar('cc.id');
+			$case_when1 .= $query->concatenate(array($c_id, 'cc.alias'), ':');
+			$case_when1 .= ' ELSE ';
+			$case_when1 .= $c_id.' END as catslug';
+			$query->select('a.*, cc.access as category_access, cc.title as category_name, '
+			.$case_when.','.$case_when1);
+
+			$query->from('#__contact_details AS a');
+
+			$query->join('INNER', '#__categories AS cc on cc.id = a.catid');
+
+			$query->where('a.id = ' . (int) $pk);
+			$published = $this->getState('filter.published');
+			$archived = $this->getState('filter.archived');
+			if (is_numeric($published)) {
+				$query->where('a.published IN (1,2)');
+				$query->where('cc.published IN (1,2)');
+			}
+			$groups = implode(',', $user->getAuthorisedViewLevels());
+			$query->where('a.access IN ('.$groups.')');
+
+			try {
+				

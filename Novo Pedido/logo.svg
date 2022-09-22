@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="744.09448819"
+   height="1052.3622047"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.48.4 r9939"
+   sodipodi:docname="logo.svg">
+  <defs
+     id="defs4" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.35"
+     inkscape:cx="362.01422"
+     inkscape:cy="1077.6468"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1366"
+     inkscape:window-height="715"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <g
+       id="g2989"
+       transform="matrix(5.8722307,0,0,5.8722307,-759.61826,-693.62794)"
+       inkscape:export-filename="C:\wamp\www\iSnack\guess_me-pack\web\images\logo.png"
+       inkscape:export-xdpi="19.920555"
+       inkscape:export-ydpi="19.920555">
+      <text
+         id="text2991"
+         style="font-size:59.84317398px;font-style:normal;font-weight:normal;text-align:start;text-anchor:start;fill:#f81100;font-family:Bauhaus 93"
+         y="73.742752"
+         x="0"
+         xml:space="preserve">NOVO</text>
+      <text
+         id="text2993"
+         style="font-size:59.84317398px;font-style:normal;font-weight:normal;text-align:start;text-anchor:start;fill:#000000;font-family:Bauhaus 93"
+         y="73.742752"
+         x="156.9221"
+         xml:space="preserve"> </text>
+      <text
+         id="text2995"
+         style="font-size:59.84317398px;font-style:normal;font-weight:normal;text-align:start;text-anchor:start;fill:#000000;font-family:Bauhaus 93"
+         y="73.742752"
+         x="171.99371"
+         xml:space="preserve">PEDIDO</text>
+      <text
+         id="text2997"
+         style="font-size:59.84317398px;font-style:normal;font-weight:normal;text-align:start;text-anchor:start;fill:#000000;font-family:Bauhaus 93"
+         y="73.742752"
+         x="387.87241"
+         xml:space="preserve"> </text>
+    </g>
+  </g>
+</svg>

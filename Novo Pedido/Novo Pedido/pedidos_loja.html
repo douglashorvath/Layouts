@@ -1,0 +1,122 @@
+<!--Design por CaffeineDev
+Author: CaffeineDev
+Author URL: http://www.caffeinedev.com.br
+-->
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Novo Pedido - Todas as suas refeições em um só lugar!</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<link href="web/css/styleCadastros.css" rel="stylesheet" type="text/css" media="all"/>
+<script src="web/js/modernizr.custom.js"></script>
+<script src="web/js/masks.js">
+</script>
+<script src="web/js/functions.js">
+</script>
+<script type="text/javascript">
+    function verificaSenha()
+    {
+        if(document.cadastro.senha.value != document.cadastro.confirma_senha.value)
+        {
+            alert('Senhas não conferem');
+            return false;
+        }
+         return true;
+    }
+    
+</script>
+
+</head>
+<body>
+  <div class="container">
+		  <div class="cbp-af-header">
+				<div class="cbp-af-inner">
+					 <div class="wrap">
+                                             <div class="logo"><img src="web/images/logo.png"/></div>
+
+                                             <div class="main-menu"><h1 style="font-family: 'arial black'; margin-left: 30px; padding: 0px; font-size: 17px;"><a href="index.php">Home</a> </h1>
+                                                 <h1 style="font-family: 'arial black'; padding: 0px; font-size: 17px;"><a  href="parceiros.html">Parceiros</a> </h1>
+                                             <h1 style="font-family: 'arial black'; padding: 0px; font-size: 17px;"><a class="select" href="#">Entrar</a> </h1>
+                                             </div>
+                                             
+					<nav>
+<!--						<a href="http://www.facebook.com/caffeinedev"><img src="web/images/facebook.png" alt="CaffeineDev Facebook" /></a>-->
+						<!--<a href="#"><img src="web/images/twitter.png" alt="" /></a>
+						<a href="#"><img src="web/images/skype.png" alt="" /></a>
+						<a href="#"><img src="web/images/dribbble.png" alt="" /></a>
+						<a href="#"><img src="web/images/linkedin.png" alt="" /></a>-->
+					</nav>
+                                             
+					<div class="clear"></div>
+                                        
+				</div>
+                                    
+			   </div>
+		 </div>
+		  <div class="main">
+          <div class="content">	
+		<div class="about_page">
+                    
+                    <div class="cadastro_left">
+                        <h5>Painel de Controle</h5>
+                        <a href="at_dados_loja.html">Alterar Dados</a>
+                        <a href="at_senha_loja.html">Alterar Senha</a>
+                        <a href="at_cardapio.html">Editar Cardápio</a>
+                        <a href="at_propagandas.html">Propagandas</a>
+                        <a href="at_pagamentos.html">Pagamentos</a>
+                    </div>
+                    <div class="cadastro_right">
+                        <h3>Alterar Dados</h3><br/>
+                        <form name="at_cadastro" class="login" method="POST" action="#" >		
+                        <h1>Os seguintes (*) campos apresentaram erros</h1>
+                            <h4>Razão Social:</h4><input disabled="disabled" name="razao_social" required="required" maxlength="120" type="text"/>
+                            <h4>CNPJ:</h4><input disabled="disabled" style="width: 180px;" required="required" maxlength="20" type="text" name="cpf" onkeyup="maskIt(this,event,'##.###.###/####-##')" />
+                            <h4>Nome Fantasia:</h4><input name="nome_fantasia" required="required" maxlength="50" type="text"/>
+                            <h4>Email:</h4><input name="email" required="required" maxlength="50" type="text"/>
+                            <h4>Telefone:</h4><input style="width: 140px;" required="required" maxlength="14" type="text" name="telefone" onkeyup="maskIt(this,event,'(##) ####-####')"/>
+                            <h4>Celular:</h4><input style="width: 140px;" required="required" maxlength="15" type="text" name="celular" onkeyup="maskIt(this,event,'(##) #####-####')"/>
+                           <br/><br/><h3>Localização</h3><br/>
+                        
+                        
+                            <h4>CEP:</h4><input style="width: 100px;" required="required" maxlength="9" type="text" name="cep" onkeyup="maskIt(this,event,'#####-###')" />
+                            <h4>Rua:</h4><input name="rua" required="required" maxlength="100" type="text"/>
+                            <h4>Número</h4><input style="width: 100px;" name="numero" required="required" min="0" type="number"/>
+                            <h4>Complemento:</h4><input name="complemento" maxlength="50" type="text"/>
+                            <h4>Bairro:</h4><input name="bairro" required="required" maxlength="50" type="text"/>
+                            <h4>Estado:</h4>
+                            <select name="estado">
+                                <option>São Paulo</option>
+                                <option>Rio de Janeiro</option>
+                            </select>
+                            <h4>Cidade:</h4>
+                            <select name="cidade">
+                                <option>Presidente Prudente</option>
+                                <option>São José dos Perdidos</option>
+                            </select><br/><br/>
+                            <input type="submit" name="submit" value="Atualizar" class="confirma_cadastro"/>
+                        </form>
+                     </div>
+                </div>		
+	 </div>
+						  
+        
+	  <div class="search">
+	  	<div class="wrap">
+	  		 <h3><span>Poucos pedidos? Precisa de mais destaque?</span></h3>
+                         <h3><a class="link" href="#">Clique aqui e conheça nosso planos de destaque na Página Inicial!</a></h3>
+	  	</div>
+	  </div>
+	 
+
+	</div>
+</div>
+
+            <div class="copy_right">
+				 <p>Todos os Direitos Reservados | Design by  <a href="http://www.caffeinedev.com.br">CaffeineDev</a></p>
+            </div>
+<script src="web/js/classie.js"></script>
+<script src="web/js/cbpAnimatedHeader.min.js"></script>
+	</body>
+</html>
+

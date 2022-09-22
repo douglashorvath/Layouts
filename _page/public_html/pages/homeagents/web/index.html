@@ -1,0 +1,391 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Home-Agents Template | Home :: CaffeineDev</title>
+<link href="web/css/style.css" rel="stylesheet" type="text/css" media="all" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script src="web/js/jquery.js"></script>
+<script src="web/js/jquery.carouFredSel.js"></script>
+<script src="web/js/site.js"></script>
+<script src="web/js/prettify.js"></script>
+<script src="web/js/prettify.css.js"></script>
+<script type="text/javascript">
+			$(function() {
+				prettyPrint();
+			});
+		</script>
+		<script type="text/javascript">
+			$(function() {
+				var thumbs = $('#thumbscarousel');
+
+				$('#carousel').carouFredSel({
+					items: 1,
+					scroll: {
+						fx: 'crossfade'
+					},
+					auto: {
+						timeoutDuration: 5000,
+						duration: 2000
+					},
+					pagination: {
+						container: '#pager',
+						duration: 300
+					}
+				});
+
+				thumbs.carouFredSel({
+					circular: false,
+					auto: false,
+					width: 150,
+					height: 75,
+					scroll: {
+						duration: 200
+					},
+					items: {
+						visible: 1,
+						width: 150,
+						height: 75
+					}
+				});
+
+				$('#pager').hover(function() {
+					var current = $('#carousel').triggerHandler( 'currentPosition' );
+					thumbs.trigger( 'slideTo', [ current, 0, true, { fx: 'none' } ] );
+					$('#thumbs').stop().fadeTo(300, 1);
+				}, function() {
+					$('#thumbs').stop().fadeTo(300, 0);
+				});
+
+				$('#pager a').mouseenter(function() {
+					var index = $('#pager a').index( $(this) );
+
+					//	clear the queue
+					thumbs.trigger( 'queue', [[]] );
+
+					//	scroll
+					thumbs.trigger( 'slideTo', [index, { queue: true }] );
+				});
+			});
+		</script>
+</head>
+<body>
+<div class="wrap">
+	<div class="wrapper">
+	<div class="header">
+	<div class="h-top">
+		<div class="logo">
+			<a href="index.html"><img src="web/images/logo.png" alt=""/></a>
+		</div>
+		<div class="header-block">
+			<div><a href="#">User Login</a> <span>|</span> <a href="#">Support</a> <span>|</span> Social Profiles</div>
+				<ul class="social-icons">
+				<li><a href="#" class="icon-1"></a></li>
+				<li><a href="#" class="icon-2"></a></li>
+				<li><a href="#" class="icon-3"></a></li>
+				</ul>
+			</div>
+	<div class="clear"></div>
+	</div>
+<div class="menu-main">
+	<ul class="dc_css3_menu">
+		  <li><a href="index.html">Home</a> </li>
+		       <li><a href="about.html">About</a></li>
+		       <li><a href="building.html">Building</a>
+			       	<ul>
+				       <li><a href="index.html">Building1</a></li>
+				  	   <li><a href="about.html">Building2</a></li>
+				   	   <li><a href="building.html">Building3</a></li>
+				   	   <li><a href="contact.html">Building4</a></li>
+			    	</ul>
+		       </li>
+		       <li><a href="contact.html">Contact</a></li>
+		    </ul>
+	<div class="search">
+      <form>
+       		<input type="text" value="" onclick="this.value='';" name="s" id="s">
+         	<input type="submit" value="">
+      </form>
+    </div>
+    <div class="clear"></div>
+  </div>
+<div class="clear"></div>
+</div>
+	<div id="c-carousel">
+		<div id="wrapper">
+			<div id="carousel">
+				<img src="web/images/e1.jpg" alt="e2" width="970" height="400" border="0" />
+				<img src="web/images/e2.jpg" alt="e2" width="970" height="400" border="0" />
+				<img src="web/images/e3.jpg" alt="e3" width="970" height="400" border="0" />
+				<img src="web/images/e4.jpg" alt="e4" width="970" height="400" border="0" />
+			</div>
+			<div id="thumbs">
+				<div id="thumbscarousel">
+					<img src="web/images/s_e1.jpg" alt="s_e1" width="150" height="75" border="0" />
+					<img src="web/images/s_e2.jpg" alt="e2" width="150" height="75" border="0" />
+					<img src="web/images/s_e3.jpg" alt="e3" width="150" height="75" border="0" />
+					<img src="web/images/s_e4.jpg" alt="e4" width="150" height="75" border="0" />
+				</div>
+			</div>
+			<div id="pager"></div>
+		</div>
+	</div>
+	<div class="content">
+	<div class="content-top">
+		<h3>Latest Offers</h3>
+		<div class="grid1">
+			<a href="#"><img src="web/images/pic1.jpg" alt=""/></a>
+				<div class="l-desc">
+					<div class="l-text">
+							<h4>diam nonummy nibh </h4>
+					</div>
+					<div class="r-text">
+						<h4>$45,200</h4>
+					</div>	
+					<div class="clear"></div>
+				</div>
+				<div class="l-desc">
+					<div class="l-text1">
+							<h4>Bedrooms / Bathrooms </h4>
+					</div>
+					<div class="r-text1">
+						<h4>6 / 4</h4>
+					</div>	
+					<div class="clear"></div>
+				</div>
+					<div class="l-desc">
+						<div class="l-text1">
+								<h4>More Information </h4>
+						</div>
+						<div class="r-text1">
+							<h4>2520 sq.ft,</h4>
+						</div>	
+						<div class="clear"></div>
+					</div>
+		</div>
+		<div class="grid2">
+			<a href="#"><img src="web/images/pic2.jpg" alt=""/></a>
+			<div class="l-desc">
+			<div class="l-text">
+					<h4>diam nonummy nibh </h4>
+			</div>
+			<div class="r-text">
+				<h4>$45,200</h4>
+			</div>	
+			<div class="clear"></div>
+		</div>
+		<div class="l-desc">
+			<div class="l-text1">
+					<h4>Bedrooms / Bathrooms </h4>
+			</div>
+			<div class="r-text1">
+				<h4>6 / 4</h4>
+			</div>	
+			<div class="clear"></div>
+		</div>
+		<div class="l-desc">
+			<div class="l-text1">
+					<h4>More Information </h4>
+			</div>
+			<div class="r-text1">
+				<h4>2520 sq.ft,</h4>
+			</div>	
+			<div class="clear"></div>
+		</div>
+		</div>
+		<div class="grid3">
+			<a href="#"><img src="web/images/pic3.jpg" alt=""/></a>
+			<div class="l-desc">
+			<div class="l-text">
+					<h4>diam nonummy nibh </h4>
+			</div>
+			<div class="r-text">
+				<h4>$45,200</h4>
+			</div>	
+			<div class="clear"></div>
+		</div>
+		<div class="l-desc">
+			<div class="l-text1">
+					<h4>Bedrooms / Bathrooms </h4>
+			</div>
+			<div class="r-text1">
+				<h4>6 / 4</h4>
+			</div>	
+			<div class="clear"></div>
+		</div>
+		<div class="l-desc">
+			<div class="l-text1">
+					<h4>More Information </h4>
+			</div>
+			<div class="r-text1">
+				<h4>2520 sq.ft,</h4>
+			</div>	
+			<div class="clear"></div>
+		</div>
+		</div>
+		<div class="clear"></div>
+	</div>
+	<div class="content-bot">
+		<div class="bot-grid">
+			<h3>Browse by price</h3>
+			<div class="sidebar-nav">
+		                <ul>
+		                   <li>UNDER $100,000</li>
+		                   <li>$100,000 - $200,000</li>
+		                   <li>$200,000 - $300,000</li>
+		                   <li>$300,000 - $400,000</li>
+		                   <li>$400,000 - $500,000</li>
+		                   <li>$500,000 - $600,000</li>
+		                   <li>$600,000 - $700,000</li>
+		                   <li>$700,000 - $800,000</li>
+		                   <li>$800,000 - $900,000</li>
+		                   <li>OVER $1,000,000</li>
+		                </ul>
+		   </div>
+		</div>
+		<div class="bot-grid">
+			<h3>Popular Cities</h3>
+			<div class="sidebar-nav">
+		                <ul>
+		                   <li>consectetuer adipiscing</li>
+		                   <li>Lorem ipsum dolor sit amet</li>
+		                   <li>diam nonummy nibh euismod </li>
+		                   <li>tincidunt ut laoreet dolore</li>
+		                   <li>aliquam erat volutpat. Ut wisi</li>
+		                   <li>suscipit lobortis nisl ut aliquip </li>
+		                   <li>ex ea commodo consequat</li>
+		                   <li>Duis autem vel eum iriure</li>
+		                   <li>hendrerit in vulputate velit</li>
+		                   <li>esse molestie consequat, vel</li>
+		                </ul>
+		   </div>
+	  </div>
+			<div class="bot-grid1">
+				<h3>Our Agents</h3>
+				<div class="left-agent">
+				<div class="left-grid">
+					<img src="web/images/pic4.jpg" alt=""/>
+				</div>
+				<div class="left-desc">
+					<h4>hendrerit in  </h4>
+					<p>Lorem ipsum dolor sit amet, consectetuer adipiscing</p>
+				</div>
+				<div class="clear"></div>
+				<div class="left-grid">
+					<img src="web/images/pic5.jpg" alt=""/>
+				</div>
+				<div class="left-desc">
+					<h4>hendrerit in  </h4>
+					<p>Lorem ipsum dolor sit amet, consectetuer adipiscing</p>
+				</div>
+				<div class="clear"></div>
+				</div>
+				<div class="right-agent">
+				<div class="right-grid">
+					<img src="web/images/pic6.jpg" alt=""/>
+				</div>
+				<div class="right-desc">
+					<h4>hendrerit in </h4>
+					<p>Lorem ipsum dolor sit amet, consectetuer adipiscing</p>
+				</div>
+				<div class="clear"></div>
+				<div class="right-grid">
+					<img src="web/images/pic7.jpg" alt=""/>
+				</div>
+				<div class="right-desc">
+					<h4>hendrerit in </h4>
+					<p>Lorem ipsum dolor sit amet, consectetuer adipiscing</p>
+				</div>
+				<div class="clear"></div>
+				</div>
+		</div>
+		<div class="clear"></div>
+	</div>
+</div>
+</div>
+</div>	
+<div class="footer">
+	<div class="wrap">
+		<div class="footer-top">
+				<div class="footer-left">
+					  <div class="footer-nav">
+							<h4>Why choose Us</h4>
+						 	<p>soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. </p>
+		              </div>
+		              <div class="footer-grid">
+							<div class="grid-l-img">
+								<img src="web/images/pic8.jpg" alt="">
+							</div>
+							<div class="grid-l-desc">
+								<p>eleifend option congue nihil imperdiet doming id quod mazim</p>
+							</div>
+							<div class="clear"></div>
+					  </div>
+					  <div class="footer-grid">
+							<div class="grid-l-img">
+								<img src="web/images/pic16.jpg" alt="">
+							</div>
+							<div class="grid-l-desc">
+							<p>eleifend option congue nihil imperdiet doming id quod mazim</p>
+							</div>
+							<div class="clear"></div>
+					</div>
+					<div class="footer-grid">
+							<div class="grid-l-img">
+								<img src="web/images/pic17.jpg" alt="">
+							</div>
+							<div class="grid-l-desc">
+								<p>eleifend option congue nihil imperdiet doming id quod mazim</p>
+							</div>
+							<div class="clear"></div>
+					</div>
+				</div>
+			<div class="footer-left">
+					<div class="footer-nav1">
+							<h4>Testimonails</h4>
+						 	<div class="testimonial_top ">
+	   				<div class="testimonial_bottom">
+	    					<blockquote>
+	    						exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum .</blockquote>
+	    		    </div>
+   			    </div>
+   			    <div class="testimonial_top ">
+	   				<div class="testimonial_bottom">
+	    					<blockquote>
+	    						exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum .</blockquote>
+	    		    </div>
+   			    </div>
+		              </div>
+		       <div class="clear"></div>
+             </div>
+			<div class="footer-right">
+				<div class="footer-nav">
+					<h4>Brokers</h4>
+						 <ul>
+		                   	<li><a href="">Always free from repetition</a></li>
+		                    <li><a href="">Always free from repetition</a></li>
+		                    <li><a href="">The standard chunk of Lorem Ipsum</a></li>
+		                    <li><a href="">The standard chunk of Lorem Ipsum</a></li>
+		                    <li><a href="">Investigationes demonstraverunt </a></li>
+		                    <li><a href="">The standard chunk of Lorem Ipsum</a></li>
+		                    <li><a href="">Investigationes demonstraverunt </a></li>
+		                    <li><a href="">Investigationes demonstraverunt </a></li>
+		                    <li><a href="">Investigationes demonstraverunt </a></li>
+		                    <li><a href="">Always free from repetition</a></li>
+		                    <li><a href="">Always free from repetition</a></li>
+		                  </ul>
+		              </div>
+			</div>
+		 <div class="clear"></div>
+	 </div>
+	  </div>
+	  </div>
+	  <div class="footer-bot">
+	 <div class="wrap">
+	 <div class="copy">
+			<p>© 2013 All rights Reserved | Design by <a href="http://caffeinedev.com.br">CaffeineDev</a></p>
+	  </div>
+	 </div>
+	</div>
+</body>
+</html>

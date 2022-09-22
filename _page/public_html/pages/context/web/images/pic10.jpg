@@ -1,0 +1,259 @@
+
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Jewellerystore Website Template | Collections :: W3layouts</title>
+		<link href="web/css/style.css" rel="stylesheet" type="text/css"  media="all" />
+		<meta name="keywords" content="Fleck iphone web template, Andriod web template, Smartphone web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+		<link href='http://fonts.googleapis.com/css?family=Average+Sans' rel='stylesheet' type='text/css'>
+	</head>
+	<body>
+		
+		<!---Start-Header-->
+		<div class="header">
+			<!---Start-wrap-->
+		<div class="wrap">
+			<!---Start-Logo-->
+				<div class="logo">
+					<a href="index.html"><img src="web/images/logo.png" title="logo" /></a>
+				</div>
+				<!---End-Logo-->
+				<!---Start-top-nav-->
+				<div class="top-nav">
+					<ul>
+						<li><a href="index.html">Home</a></li>
+						<li><a href="about.html">About</a></li>
+						<li><a href="collections.html">Collections</a></li>
+						<li><a href="blog.html">Blog</a></li>
+						<li><a href="contact.html">Contact</a></li>
+					</ul>
+				</div>
+				<div class="clear"> </div>
+				<!---End-top-nav-->
+			</div>
+			<!---End-Header-->
+			</div>
+				<div class="clear"> </div>
+				<div class="wrap">
+				<div class="collecton">
+					<h4>Rings</h4>
+					<div class="collections collect">
+							<img src="web/images/ring1.jpg" title="rigns" />
+						<h5>Lorem ipsum dolor</h5>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>
+					</div>
+					<div class="collections collect">
+							<img src="web/images/ring2.jpg" title="rigns" />
+						<h5>Lorem ipsum dolor</h5>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>
+					</div>
+					<div class="collections collect">
+							<img src="web/images/ring3.jpg" title="rigns" />
+						<h5>Lorem ipsum dolor</h5>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>
+					</div>
+					<div class="collections collect">
+							<img src="web/images/ring4.jpg" title="rigns" />
+						<h5>Lorem ipsum dolor</h5>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>
+					</div>
+					<div class="clear"> </div>
+				</div>
+				<div class="collecton">
+					<h4>Necklace</h4>
+					<div class="collections collect">
+							<img src="web/images/nak1.jpg" title="rigns" />
+						<h5>Lorem ipsum dolor</h5>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>
+					</div>
+					<div class="collections collect">
+							<img src="web/images/nak4.jpg" title="rigns" />
+						<h5>Lorem ipsum dolor</h5>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>
+					</div>
+					<div class="collections collect">
+							<img src="web/images/nak3.jpg" title="rigns" />
+						<h5>Lorem ipsum dolor</h5>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>
+					</div>
+					<div class="collections collect">
+							<img src="web/images/nak4.JPG" title="rigns" />
+						<h5>Lorem ipsum dolor</h5>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>
+					</div>
+					<div class="clear"> </div>
+				</div>
+				<div class="collecton">
+					<h4>Diamond Jewellery</h4>
+					<div class="collections collect">
+							<img src="web/images/dom1.jpg" title="rigns" />
+						<h5>Lorem ipsum dolor</h5>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>
+					</div>
+					<div class="collections collect">
+							<img src="web/images/dom2.jpg" title="rigns" />
+						<h5>Lorem ipsum dolor</h5>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>
+					</div>
+					<div class="collections collect">
+							<img src="web/images/dom3.jpg" title="rigns" />
+						<h5>Lorem ipsum dolor</h5>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>
+					</div>
+					<div class="collections collect">
+							<img src="web/images/gird-img.jpg" title="rigns" />
+						<h5>Lorem ipsum dolor</h5>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>
+					</div>
+					<div class="clear"> </div>
+				</div>		
+				 </div>
+				<!---start-footer-->
+				<div class="clear"> </div>
+			<div class="footer">
+				<div class="wrap">
+				<div class="footer-grid1">
+					<h4>Most-popular</h4>
+					<ul>
+						<li><a href="#">consectetur adipisicing elit,</a></li>
+						<li><a href="#">sed do eiusmod tempor incididunt</a></li>
+						<li><a href="#">Lorem ipsum dolor sit amet,</a></li>
+						<li><a href="#">dolore magna aliqua.,</a></li>
+						<li><a href="#">tempor incididunt ut labore</a></li>
+					</ul>
+				</div>
+				<div class="footer-grid1">
+					<h4>Recent-One</h4>
+					<ul>
+						<li><a href="#">consectetur adipisicing elit,</a></li>
+						<li><a href="#">sed do eiusmod tempor incididunt</a></li>
+						<li><a href="#">Lorem ipsum dolor sit amet,</a></li>
+						<li><a href="#">dolore magna aliqua.,</a></li>
+						<li><a href="#">tempor incididunt ut labore</a></li>
+					</ul>
+				</div>
+				<div class="footer-grid1">
+					<h4>Our Special</h4>
+					<ul>
+						<li><a href="#">consectetur adipisicing elit,</a></li>
+						<li><a href="#">sed do eiusmod tempor incididunt</a></li>
+						<li><a href="#">Lorem ipsum dolor sit amet,</a></li>
+						<li><a href="#">dolore magna aliqua.,</a></li>
+						<li><a href="#">tempor incididunt ut labore</a></li>
+					</ul>
+				</div>
+				<div class="footer-grid1">
+					<h4>Our Designs</h4>
+					<ul>
+						<li><a href="#">consectetur adipisicing elit,</a></li>
+						<li><a href="#">sed do eiusmod tempor incididunt</a></li>
+						<li><a href="#">Lorem ipsum dolor sit amet,</a></li>
+						<li><a href="#">dolore magna aliqua.,</a></li>
+						<li><a href="#">tempor incididunt ut labore</a></li>
+					</ul>
+				</div>
+				<div class="footer-grid1">
+					<h4>Our Deals</h4>
+					<ul>
+						<li><a href="#">consectetur adipisicing elit,</a></li>
+						<li><a href="#">sed do eiusmod tempor incididunt</a></li>
+						<li><a href="#">Lorem ipsum dolor sit amet,</a></li>
+						<li><a href="#">dolore magna aliqua.,</a></li>
+						<li><a href="#">tempor incididunt ut labore</a></li>
+					</ul>
+				</div>
+				<div class="footer-grid1">
+					<h4>Latest-News</h4>
+					<ul>
+						<li><a href="#">consectetur adipisicing elit,</a></li>
+						<li><a href="#">sed do eiusmod tempor incididunt</a></li>
+						<li><a href="#">Lorem ipsum dolor sit amet,</a></li>
+						<li><a href="#">dolore magna aliqua.,</a></li>
+						<li><a href="#">tempor incididunt ut labore</a></li>
+					</ul>
+				</div>
+				<div class="clear"> </div>
+			</div>
+			</div>
+			<div class="clear">
+				<!---start-sub-footer-->
+			<div class="sub-footer">
+				<div class="wrap">
+				<div class="sub-footer-left">
+					<a href="index.html"><img src="web/images/logo1.png" title="logo" /></a>
+				</div>
+				<div class="sub-footer-right">
+					<p>&#169 All rights Reserved | Designed by <a href="http://w3layouts.com/">W3Layouts</a></p>
+				</div>
+				<div class="clear"> </div>
+			</div>
+		</div>
+		</div>
+		<!---End-wrap-->
+
+	</body>
+</html>
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   # $Id: orders.php $
+# TomatoCart Open Source Shopping Cart Solutions
+# http://www.tomatocart.com
+#
+# Copyright (c) 2009 Wuxi Elootec Technology Co., Ltd; Copyright (c) 2007 osCommerce
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License v2 (1991)
+# as published by the Free Software Foundation.
+
+heading_title = Orders
+
+heading_title_choose_customer = Create New Order -- Step 1: Choose Customer
+heading_title_choose_product_title = Choose Product
+heading_title_choose_shipping_method = Choose Shipping Method
+
+operation_heading_order_id = Order ID
+operation_heading_customer_id = Customer ID
+operation_heading_filter_status = Status:
+operation_heading_order_date = Order Date
+
+store_credit_title = Store Credit
+
+action_heading_batch_delete_orders = Batch Delete Orders
+
+table_heading_customers = Customers
+table_heading_order_total = Order Total
+table_heading_date_purchased = Date Purchased
+table_heading_tracking_no = Tracking No.
+table_heading_status = Status
+table_heading_action = Action
+table_heading_products = Products
+table_heading_product_sku = SKU
+table_heading_quantity = Qty
+table_heading_tax = Tax
+table_heading_price_net = Price (Net)
+table_heading_price_gross = Price (Gross)
+table_heading_total_net = Total (Net)
+table_heading_total_gross = Total (Gross)
+table_heading_date_added = Date Added
+table_heading_comments = Comments
+table_heading_customer_notified = Customer Notified
+table_heading_price = Price
+table_heading_total = Total
+table_heading_quantity_available = Qty
+table_heading_return_quantity = Qty to Refund
+table_heading_quantity_in_stock = In Stock
+table_heading_out_products_stock = This product is currentty out of stock !
+
+table_heading_date_added = Date Added
+table_heading_refunds_type = Refund Type
+table_heading_total_products = Total Products
+table_heading_sub_total = Sub Total
+table_heading_total_refund = Total Refund
+
+table_heading_return_id = Return ID
+table_heading_admin_comments

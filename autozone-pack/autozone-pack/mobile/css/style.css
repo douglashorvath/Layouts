@@ -1,0 +1,493 @@
+/*---
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+---*/
+/* reset */
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,dl,dt,dd,ol,nav ul,nav li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline;}
+article, aside, details, figcaption, figure,footer, header, hgroup, menu, nav, section {display: block;}
+ol,ul{list-style:none;margin:0px;padding:0px;}
+blockquote,q{quotes:none;}
+blockquote:before,blockquote:after,q:before,q:after{content:'';content:none;}
+table{border-collapse:collapse;border-spacing:0;}
+/* start editing from here */
+a{text-decoration:none;}
+.txt-rt{text-align:right;}/* text align right */
+.txt-lt{text-align:left;}/* text align left */
+.txt-center{text-align:center;}/* text align center */
+.float-rt{float:right;}/* float right */
+.float-lt{float:left;}/* float left */
+.clear{clear:both;}/* clear float */
+.pos-relative{position:relative;}/* Position Relative */
+.pos-absolute{position:absolute;}/* Position Absolute */
+.vertical-base{	vertical-align:baseline;}/* vertical align baseline */
+.vertical-top{	vertical-align:top;}/* vertical align top */
+.underline{	padding-bottom:5px;	border-bottom: 1px solid #eee; margin:0 0 20px 0;}/* Add 5px bottom padding and a underline */
+nav.vertical ul li{	display:block;}/* vertical menu */
+nav.horizontal ul li{	display: inline-block;}/* horizontal menu */
+img{max-width:100%;}
+/*end reset*/
+body{
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight:100%;
+}
+.content{
+	margin:0px 10px;
+}
+.image-slider{
+	text-align:center;
+}
+/*---nav----*/
+/*----*/
+.header {
+	padding: 12px 0px 6px 0px;
+	background:#262626;
+	text-align: center;
+}
+.top-nav ul li{
+	display:inline-block;
+}
+.top-nav{
+	text-align:center;
+	background:#262626;
+	padding: 10px 0px;
+}
+.top-nav li a{
+	color: #fff;
+	font-size: 0.9em;
+	text-transform: uppercase;
+	padding: 0px 3px;
+}
+/*----nav----*/
+
+.main{
+	width:70%;
+}
+.banner-withtext{
+	float: right;
+	width: 29.9%;
+	background: #FF8310;
+	padding: 29px 0px 27px 0.3px;
+}
+.banner-withtext h3,.banner-withtext h2{
+	color:#333333;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 0.8em;
+}
+.banner-withtext h2{
+	color:#fff;
+}
+.banner-withtext p{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 0.8em;
+	color:#fff;
+	line-height: 1.8em;
+}
+.Lets-start{
+	background: #F2F2F2;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 0.7em;
+	float: right;
+	width: 29.6%;
+	padding: 6px 0px 0px 0px;
+	text-align: center;
+	border-left: none;
+	border-top: none;
+}
+.Lets-start a{
+	background:#333333;
+	color:#fff;
+	border-radius: 0.3em;
+	text-transform: uppercase;
+	transition: 0.5s ease;
+}
+.Lets-start a:hover{
+	color:#FF8310;
+}
+.banner-slider{
+	background-image: url(../images/banner-bg1.png);
+}
+.box{
+	background:#F2F2F2;
+}
+/*---end-header-----*/
+/*  GRID OF Five   ============================================================================= */
+.section {
+	clear: both;
+	padding: 0px;
+	margin: 0px;
+}
+
+.images_1_of_5 {
+	padding: 0.5em 0%;
+	text-align: center;
+}
+.images_1_of_5  img{
+	max-width:100%;
+	display:inline-block;
+}
+.images_1_of_5  h2 {
+	color:#FF8310;
+	margin-top:0.2em;
+	margin-bottom:0em;
+	font-size:1.2em;
+	font-weight : normal;
+	letter-spacing: -1px;
+	font-family: Arial, Helvetica, sans-serif;
+}
+.images_1_of_5  p {
+	font-family: Arial, Helvetica, sans-serif;
+	padding:0.3em 0;
+	font-size:0.8125em;
+	color: rgb(155, 155, 155);
+	line-height: 1.5em;	
+	font-size: 0.8em;
+}
+.images_1_of_5 .button{
+	margin-top:.3em;
+	line-height:1.9em;
+}
+.images_1_of_5 .button a{
+		font-size:0.8em;
+		font-family: Arial, Helvetica, sans-serif;
+		background-color: #f7f7f7;
+		background-repeat: repeat-x;
+		border: #fff 1px solid;
+		-webkit-border-radius: 6px;
+		-moz-border-radius: 6px;
+		box-shadow: 0px 0px 3px rgb(207, 206, 206);
+		text-transform: uppercase;
+		color: #000;
+		padding: 6px 12px;
+		-webkit-appearance: none;
+}
+/*  GRID OF THREE   ============================================================================= */
+.section {
+	clear: both;
+	padding: 0px;
+	margin: 0px;
+}
+.group {
+    zoom:1;
+}
+
+.images_1_of_3 {
+	box-shadow: 0px 0px 10px rgb(216, 216, 216); 
+	padding: 10px;
+	margin-bottom: 1em;
+}
+.images_1_of_3  img {
+	max-width:100%;
+	display:block;
+}
+.images_1_of_3  h2 {
+    color: rgb(73, 73, 73);
+	margin-top:0.4em;
+	margin-bottom:0.2em;
+	font-size:1em;
+	font-family: Arial, Helvetica, sans-serif;
+	text-transform: uppercase;
+	letter-spacing: -1px;
+}
+.images_1_of_3  p  {
+	font-family: Arial, Helvetica, sans-serif;
+	padding: 0.3em 0;
+	font-size: 0.8125em;
+	color: rgb(155, 155, 155);
+	line-height: 1.5em;	
+	font-size: 0.8em;
+}
+.images_1_of_3 .button{
+	margin-top:.3em;
+	line-height:1.9em;
+}
+.images_1_of_3 .button a{
+		font-size: 0.7em;
+		font-family: Arial, Helvetica, sans-serif;
+		background-color: #f7f7f7;
+		background-repeat: repeat-x;
+		border: #fff 1px solid;
+		-webkit-border-radius: 6px;
+		-moz-border-radius: 6px;
+		border-radius: 6px;
+		box-shadow:0px 0px 3px rgb(207, 206, 206);
+		text-transform: uppercase;
+		color: #000;
+		padding: 8px 12px;
+		-webkit-appearance: none;
+}
+.grids h4,.slidebar h4{
+	color: #333333;
+	margin-top: 0.4em;
+	margin-bottom: 0.4em;
+	font-size: 1.2em;
+	font-weight: normal;
+	font-family: Arial, Helvetica, sans-serif;
+}
+/*  GRID OF THREE   ============================================================================= */
+.section {
+	clear: both;
+	padding: 0px;
+	margin: 0px;
+}
+.group {
+    zoom:1;
+    margin: 0px 0px 18px 0px;
+}
+.text{
+	display: block;
+	float:left;
+	margin: 0% 0 0% 3.6%;
+}
+.images_1_of_2 {
+	padding:1.5%; 
+	border-bottom: 1px solid rgb(240, 240, 240);
+	padding-bottom: 12px;
+}
+.listimg_2_of_1 {
+	float: left;
+}
+.list_2_of_1 {
+	width:57%;
+	float: left;
+}
+.images_1_of_2  img {
+	max-width:100%;
+	float: left;
+}
+.list_2_of_1  h2 {
+	color:rgb(73, 73, 73);
+	margin-top:0;
+	font-size:1em;
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight : normal;
+	letter-spacing: -1px;
+	text-transform: uppercase;
+}
+.list_2_of_1  p{
+	font-family: Arial, Helvetica, sans-serif;
+	padding: 0.3em 0;
+	font-size: 0.8125em;
+	color: rgb(155, 155, 155);
+	line-height: 1.8em;	
+}
+.list_2_of_1 .button{
+	line-height:1.9em;
+	margin-top:0.5em;
+}
+.list_2_of_1 .button a{
+	font-size: 0.8em;
+	font-family: Arial, Helvetica, sans-serif;
+	background-color: #f7f7f7;
+	background-repeat: repeat-x;
+	border: #fff 1px solid;
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+	border-radius: 6px;
+	text-transform: uppercase;
+	color: #000;
+	padding: 10px 12px;
+	float:right;
+}
+.list_2_of_1 .button a:hover{
+	    border: 1px solid #303030;
+        background: rgb(17, 17, 17);
+        text-decoration:none;
+        color: #FF8310; 
+}
+.slidebar{
+	float:right;
+}
+.footer{
+	background: #262626;
+	padding: 5px 12px;
+	margin-top:20px;
+}
+.left-footer{
+	float:left;
+}
+.right-footer{
+	float:right;
+}
+.right-footer p{
+	color: #7B7B7B;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 0.9em;
+	margin-top: 5px;
+}
+.right-footer p a{
+	color: rgb(194, 194, 194);
+}
+.right-footer p a:hover{
+	color:#FF8310;
+}
+/*  GRID OF THREE   ============================================================================= */
+.image {
+	clear: both;
+	padding: 0px;
+	margin: 0px;
+	padding: 0.7% 0px 1.5% 0px;
+}
+.images_3_of_1  img {
+	max-width:100%;
+	display:block;
+	width: 100%;
+}
+.span_2_of_3  h2 {
+	color: rgb(73, 73, 73);
+	margin-bottom:0.3em;
+	font-size:1.5em;
+	font-family: Arial, Helvetica, sans-serif;
+	text-transform: uppercase;
+	font-weight : normal;
+	margin-top: 0px;
+	letter-spacing: -1px;
+}
+.span_2_of_3  p  {
+	font-family: Arial, Helvetica, sans-serif;
+	padding: 0.3em 0;
+	font-size: 0.8125em;
+	color: rgb(155, 155, 155);
+	line-height: 1.8em;
+}
+.span_2_of_3 .button{
+	margin-top:.3em;
+	line-height:1.9em;
+}
+.span_2_of_3 .button a{
+		font-size: 0.8em;
+		font-family: Arial, Helvetica, sans-serif;
+		background-color: #f7f7f7;
+		background-repeat: repeat-x;
+		border: #fff 1px solid;
+		-webkit-border-radius: 6px;
+		-moz-border-radius: 6px;
+		border-radius: 6px;
+		text-transform: uppercase;
+		color: #000;
+		padding: 4px 12px;
+		float:right;
+}
+
+
+/*-----about----*/
+.about h4,.services h4{
+	color: #333333;
+	margin-top: 0.2em;
+	font-size: 1.2em;
+	font-weight: normal;
+	font-family: Arial, Helvetica, sans-serif;
+}
+.about,.services {
+	border-bottom: 1px solid rgb(240, 240, 240);
+	padding-bottom: 8px;
+	padding-bottom: 30px;
+}
+/*----error-page----*/
+.error-page{
+	text-align:center;
+	margin-bottom:10px;
+	border-bottom: 1px solid rgb(240, 240, 240);
+	padding-bottom:40px;
+}
+.error-page h4,.error-page h3{
+	color: #333333;
+	margin-top: 0.4em;
+	font-size:1em;
+	font-weight: normal;
+	font-family: Arial, Helvetica, sans-serif;
+}
+.error-page h4{
+	font-size:5em;
+	color:#FF8310;
+	margin:0px;
+}
+/*  Contact Form  ============================================================================= */
+.section {
+	clear: both;
+	padding: 0px;
+	margin: 0px;
+}
+.group {
+    zoom:1;
+}
+.span_2_of_3  h2,
+.span_1_of_3  h2 {
+	color: #333333;
+	font-size: 1em;
+	font-weight: normal;
+	letter-spacing: -1px;
+	font-family: Arial, Helvetica, sans-serif;
+	margin-top: 13px;
+}
+.contact-form{
+	position:relative;
+	padding-bottom:30px;
+}
+.contact-form div{
+	padding:5px 0;
+}
+.contact-form span{
+	display:block;
+	font-size:0.8125em;
+	color: #333;
+	padding-bottom:5px;
+	font-family: Arial, Helvetica, sans-serif;
+}
+.contact-form input[type="text"],.contact-form textarea{
+		    padding:8px;
+			display:block;
+			width:93%;
+			background: rgb(216, 216, 216);
+			border: none;
+			outline:none;
+			color:#464646;
+			font-size:0.8125em;
+			font-family:Arial, Helvetica, sans-serif;
+			-webkit-appearance:none;
+}
+.contact-form textarea{
+		resize:none;
+		height:120px;		
+}
+.contact-form input[type="submit"]{
+	font-size:1em;
+	font-family: Arial, Helvetica, sans-serif;
+	background-color: #f7f7f7;
+	background-repeat: repeat-x;
+	border: #fff 1px solid;
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+	border-radius: 6px;
+	text-transform: uppercase;
+	color: #000;
+	padding: 13px 17px 13px 17px;
+	cursor:pointer;
+	-webkit-appearance: none;
+}
+
+.contact-form input[type="submit"]:active{
+	background-color:#F7503D;  
+}
+.company_address{
+	padding-top:26px;
+}
+.company_address p{
+	font-family: Arial, Helvetica, sans-serif;
+	padding: 0.2em 0;
+	font-size: 0.8125em;
+	color: rgb(155, 155, 155);
+	line-height: 1.5em;
+}
+.company_address p span{
+	text-decoration:underline;
+	color:#333;
+	cursor:pointer;
+	font-family: Arial, Helvetica, sans-serif;
+}
+.map{
+	border:1px solid #C7C7C7;
+	margin-bottom:15px;
+}
+

@@ -1,0 +1,29 @@
+<?php
+/**
+ * @package		Joomla.Site
+ * @copyright	Copyright (C) 2005 - 2013 Open Source Matters, Inc. All rights reserved.
+ * @license		GNU General Public License version 2 or later; see LICENSE.txt
+ */
+
+defined('_JEXEC') or die;
+
+jimport('joomla.application.categories');
+
+/**
+ * Build the route for the com_content component
+ *
+ * @param	array	An array of URL arguments
+ * @return	array	The URL arguments to use to assemble the subsequent URL.
+ * @since	1.5
+ */
+function ContentBuildRoute(&$query)
+{
+	$segments	= array();
+
+	// get a menu item based on Itemid or currently active
+	$app		= JFactory::getApplication();
+	$menu		= $app->getMenu();
+	$params		= JComponentHelper::getParams('com_content');
+	$advanced	= $params->get('sef_advanced_link', 0);
+
+	// we need a menu item.  Either the one specified in the qu

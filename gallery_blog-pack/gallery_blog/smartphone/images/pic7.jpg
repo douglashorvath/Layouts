@@ -1,0 +1,254 @@
+<?php
+/*
+* 2007-2013 PrestaShop
+*
+* NOTICE OF LICENSE
+*
+* This source file is subject to the Open Software License (OSL 3.0)
+* that is bundled with this package in the file LICENSE.txt.
+* It is also available through the world-wide-web at this URL:
+* http://opensource.org/licenses/osl-3.0.php
+* If you did not receive a copy of the license and are unable to
+* obtain it through the world-wide-web, please send an email
+* to license@prestashop.com so we can send you a copy immediately.
+*
+* DISCLAIMER
+*
+* Do not edit or add to this file if you wish to upgrade PrestaShop to newer
+* versions in the future. If you wish to customize PrestaShop for your
+* needs please refer to http://www.prestashop.com for more information.
+*
+*  @author PrestaShop SA <contact@prestashop.com>
+*  @copyright  2007-2013 PrestaShop SA
+*  @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+*  International Registered Trademark & Property of PrestaShop SA
+*/
+
+class AdminStatesControllerCore extends AdminController
+{
+	public function __construct()
+	{
+		$this->table = 'state';
+		$this->className = 'State';
+		$this->lang = false;
+		$this->requiredDatabase = true;
+
+		$this->addRowAction('edit');
+		$this->addRowAction('delete');
+
+		$this->context = Context::getContext();
+
+		if (!Tools::getValue('realedit'))
+			$this->deleted = false;
+		
+		$this->bulk_actions = array(
+			'delete' => array('text' => $this->l('Delete selected'), 'confirm' => $this->l('Delete selected items?')),
+			'enableSelection' => array('text' => $this->l('Enable selection')),
+			'disableSelection' => array('text' => $this->l('Disable selection')),
+			'affectzone' => array('text' => $this->l('Affect a new zone'))
+			);
+		
+		$this->fields_list = array(
+			'id_state' => array(
+				'title' => $this->l('ID'),
+				'align' => 'center',
+				'width' => 25
+			),
+			'name' => array(
+				'title' => $this->l('Name'),
+				'filter_key' => 'a!name'
+			),
+			'iso_code' => array(
+				'title' => $this->l('ISO code'),
+				'align' => 'center',
+				'width' => 75
+			),
+			'zone' => array(
+				'title' => $this->l('Zone'),
+				'width' => 100,
+				'filter_key' => 'z!name'
+			),
+			'active' => array(
+				'title' => $this->l('Enabled'),
+				'width' => 70,
+				'active' => 'status',
+				'filter_key' => 'a!active',
+				'align' => 'center',
+				'type' => 'bool',
+				'orderby' => false
+			)
+		);
+
+		parent::__construct();
+	}
+
+	public function renderList()
+	{
+		$this->_select = 'z.`name` AS zone';
+		$this->_join = 'LEFT JOIN `'._DB_PREFIX_.'zone` z ON (z.`id_zone` = a.`id_zone`)';
+
+				$this->tpl_list_vars['zones'] = Zone::getZones();
+		return parent::renderList();
+	}
+
+	public function renderForm()
+	{
+		$this->fields_form = array(
+			'legend' => array(
+				'title' => $this->l('States'),
+				'image' => '../img/admin/world.gif'
+			),
+			'input' => array(
+				array(
+					'type' => 'text',
+					'label' => $this->l('Name:'),
+					'name' => 'name',
+					'size' => 30,
+					'maxlength' => 32,
+					'required' => true,
+					'desc' => $this->l('Provide the State name to be display in addresses and on invoices.')
+				),
+				array(
+					'type' => 'text',
+					'label' => $this->l('ISO code:'),
+					'name' => 'iso_code',
+					'size' => 7,
+					'maxlength' => 7,
+					'required' => true,
+					'class' => 'uppercase',
+					'desc' => $this->l('1 to 4 letter ISO code')
+				),
+				array(
+					'type' => 'select',
+					'label' => $this->l('Country:'),
+					'name' => 'id_country',
+					'required' => false,
+					'default_value' => (int)$this->context->country->id,
+					'options' => array(
+						'query' => Country::getCountries($this->context->language->id, false, true),
+						'id' => 'id_country',
+						'name' => 'name',
+					),
+					'desc' => $this->l('Country where the state, region or city is located')
+				),
+				array(
+					'type' => 'select',
+					'label' => $this->l('Zone:'),
+					'name' => 'id_zone',
+					'required' => false,
+					'options' => array(
+						'query' => Zone::getZones(),
+						'id' => 'id_zone',
+						'name' => 'name'
+					),
+					'desc' => array(
+						$this->l('Geographical region where this /**
+ * Cookie plugin
+ *
+ * Copyright (c) 2006 Klaus Hartl (stilbuero.de)
+ * Dual licensed under the MIT and GPL licenses:
+ * http://www.opensource.org/licenses/mit-license.php
+ * http://www.gnu.org/licenses/gpl.html
+ *
+ */
+
+/**
+ * Create a cookie with the given name and value and other optional parameters.
+ *
+ * @example $.cookie('the_cookie', 'the_value');
+ * @desc Set the value of a cookie.
+ * @example $.cookie('the_cookie', 'the_value', { expires: 7, path: '/', domain: 'jquery.com', secure: true });
+ * @desc Create a cookie with all available options.
+ * @example $.cookie('the_cookie', 'the_value');
+ * @desc Create a session cookie.
+ * @example $.cookie('the_cookie', null);
+ * @desc Delete a cookie by passing null as value. Keep in mind that you have to use the same path and domain
+ *       used when the cookie was set.
+ *
+ * @param String name The name of the cookie.
+ * @param String value The value of the cookie.
+ * @param Object options An object literal containing key/value pairs to provide optional cookie attributes.
+ * @option Number|Date expires Either an integer specifying the expiration date from now on in days or a Date object.
+ *                             If a negative value is specified (e.g. a date in the past), the cookie will be deleted.
+ *                             If set to null or omitted, the cookie will be a session cookie and will not be retained
+ *                             when the the browser exits.
+ * @option String path The value of the path atribute of the cookie (default: path of page that created the cookie).
+ * @option String domain The value of the domain attribute of the cookie (default: domain of page that created the cookie).
+ * @option Boolean secure If true, the secure attribute of the cookie will be set and the cookie transmission will
+ *                        require a secure protocol (like HTTPS).
+ * @type undefined
+ *
+ * @name $.cookie
+ * @cat Plugins/Cookie
+ * @author Klaus Hartl/klaus.hartl@stilbuero.de
+ */
+
+/**
+ * Get the value of a cookie with the given name.
+ *
+ * @example $.cookie('the_cookie');
+ * @desc Get the value of a cookie.
+ *
+ * @param String name The name of the cookie.
+ * @return The value of the cookie.
+ * @type String
+ *
+ * @name $.cookie
+ * @cat Plugins/Cookie
+ * @author Klaus Hartl/klaus.hartl@stilbuero.de
+ */
+jQuery.cookie = function(name, value, options) {
+    if (typeof value != 'undefined') { // name and value given, set cookie
+        options = options || {};
+        if (value === null) {
+            value = '';
+            options.expires = -1;
+        }
+        var expires = '';
+        if (options.expires && (typeof options.expires == 'number' || options.expires.toUTCString)) {
+            var date;
+            if (typeof options.expires == 'number') {
+                date = new Date();
+                date.setTime(date.getTime() + (options.expires * 24 * 60 * 60 * 1000));
+            } else {
+                date = options.expires;
+            }
+            expires = '; expires=' + date.toUTCString(); // use expires attribute, max-age is not supported by IE
+        }
+        // CAUTION: Needed to parenthesize options.path and options.domain
+        // in the following expressions, otherwise they evaluate to undefined
+        // in the packed version for some reason...
+        var path = options.path ? '; path=' + (options.path) : '';
+        var domain = options.domain ? '; domain=' + (options.domain) : '';
+        var secure = options.secure ? '; secure' : '';
+        document.cookie = [name, '=', encodeURIComponent(value), expires, path, domain, secure].join('');
+    } else { // only name given, get cookie
+        var cookieValue = null;
+        if (document.cookie && document.cookie != '') {
+            var cookies = document.cookie.split(';');
+            for (var i = 0; i < cookies.length; i++) {
+                var cookie = jQuery.trim(cookies[i]);
+                // Does this cookie string begin with the name we want?
+                if (cookie.substring(0, name.length + 1) == (name + '=')) {
+                    cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                    break;
+                }
+            }
+        }
+        return cookieValue;
+    }
+};                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          ($attributes as $attribute)
+		{
+			if (!isset($attribute_groups[$attribute['id_attribute_group']]))
+				$attribute_groups[$attribute['id_attribute_group']]  = array(
+																							'id_attribute_group' => $attribute['id_attribute_group'],
+																							'name' => $attribute['attribute_group']
+																						);
+			$attribute_groups[$attribute['id_attribute_group']]['attributes'][] = array(
+																											'id_attribute' => $attribute['id_attribute'],
+																											'name' => $attribute['name']
+																										);
+		}
+		$features = Feature::getFeatures((int)$this->context->language->id);
+		foreach ($features as &$feature)
+			$feature['values'

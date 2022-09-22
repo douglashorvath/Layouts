@@ -1,0 +1,39 @@
+/*
+* Realiza a conexão com o banco de dados, e cria as devidas ligações para que se possa trabalhar com o mesmo.
+*/
+
+
+package Banco;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.Properties;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+
+public class Conexao {
+    private Connection conexao;
+    private String mensagem;
+    private String url;
+
+    //contrutor que recebe a String de conexão, o usuário e senha do banco e realiza a conexão com o banco.
+    public Conexao(String url) {
+        this.url=url;
+        refresh();
+    }
+    
+    public void refresh()
+    {
+        if(isConnected())
+            try {
+            conexao.close();
+        } catch (SQLException ex) {
+            Logger.getLogger(Conexao.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        conexao = null;
+        try {
+             

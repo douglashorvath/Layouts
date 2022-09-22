@@ -1,0 +1,405 @@
+/*
+Author: W3layout
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+*/
+/* reset */
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,dl,dt,dd,ol,nav ul,nav li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline;}
+article, aside, details, figcaption, figure,footer, header, hgroup, menu, nav, section {display: block;}
+ol,ul{list-style:none;margin:0;padding:0;}
+blockquote,q{quotes:none;}
+blockquote:before,blockquote:after,q:before,q:after{content:'';content:none;}
+table{border-collapse:collapse;border-spacing:0;}
+/* start editing from here */
+a{text-decoration:none;}
+.txt-rt{text-align:right;}/* text align right */
+.txt-lt{text-align:left;}/* text align left */
+.txt-center{text-align:center;}/* text align center */
+.float-rt{float:right;}/* float right */
+.float-lt{float:left;}/* float left */
+.clear{clear:both;}/* clear float */
+.pos-relative{position:relative;}/* Position Relative */
+.pos-absolute{position:absolute;}/* Position Absolute */
+.vertical-base{	vertical-align:baseline;}/* vertical align baseline */
+.vertical-top{	vertical-align:top;}/* vertical align top */
+.underline{	padding-bottom:5px;	border-bottom: 1px solid #eee; margin:0 0 20px 0;}/* Add 5px bottom padding and a underline */
+nav.vertical ul li{	display:block;}/* vertical menu */
+nav.horizontal ul li{	display: inline-block;}/* horizontal menu */
+img{max-width:100%;}
+/*end reset*/
+body {
+	font-family: "Arial", Arial, Helvetica, sans-serif;
+	background: url('../images/bg.png');  
+	font-size: 13px;
+	color:#555;
+}
+.wrap{
+	padding: 10px;
+}
+.header{
+	margin-bottom: 10px;
+}
+/*logo*/
+.logo{
+	float:left;
+}
+.nav{
+	margin-top:10px;
+	float: right;
+}
+.nav li{
+	display: inline-block;
+	margin-right:6px;
+}
+.nav li:last-child{
+	margin-right: 0;
+}
+.nav li a img:hover{
+	opacity: 0.6;
+}
+.drp-dwn{
+	display: inline-block;
+	width: 100%;
+	position: relative;
+	top: 0px;
+}
+.drp-dwn select {
+	padding: 4px;
+	outline: none;
+	display: block !important;
+	width: 100%;
+	color: #555;
+	border: 1px solid rgb(192, 192, 192);
+	background: rgba(216, 216, 216, 0.32);
+	cursor: pointer;
+}
+/*slider */
+.slideshow{
+	margin-top:10px;
+	text-align:center;
+	padding:10px;
+	border:5px solid #FFFFFF;
+}
+/*  GRID OF THREE   ============================================================================= */
+.col_1_of_3{
+	padding:10px;
+	text-align:center;
+	color:#fff;
+	background: #333;
+}
+.col_1_of_3:nth-child(2){
+	background:rgb(122, 167, 43);
+	color: #fff;
+}
+.span_1_of_3 {
+	margin-top:10px;
+}
+.span_1_of_3  h3{
+	text-transform:uppercase;
+	font-size:18px;
+	line-height: 1.2;
+	font-weight : normal;
+	letter-spacing: -1px;
+	font-family: "Century Gothic" ;
+}
+.span_1_of_3  p  {
+	text-align:justify;
+	padding:0.5em 0;
+	line-height: 1.4em;
+	color:#fff;
+	font-size:13px;
+
+}
+.span_1_of_3 img{
+	vertical-align: middle;
+	margin-right: 10px;
+}
+/*  GRID OF Four   ============================================================================= */
+.grid_1_of_4{
+	text-align:center;
+	padding:10px;
+	margin:10px 0;
+	background:url('../images/bg-btm.jpg');
+}
+.grid_1_of_4:first-child { 
+	margin-left: 0; 
+} 
+.images_1_of_4  img{
+	text-align:center;
+	max-width:100%;
+}
+.images_1_of_4  h3{
+	color:rgb(122, 167, 43);
+	margin-top:0.4em;
+	margin-bottom:0.2em;
+	font-size:18px;
+	font-weight : normal;
+	letter-spacing: -1px;
+}
+.images_1_of_4  p {
+	font-size:13px;
+	padding:0.3em 0;
+	color: #555;
+	line-height: 1.4em;	
+}
+.images_1_of_4 .button{
+	text-align:center;
+	margin-top:.3em;
+	line-height:1.9em;
+}
+.button{
+	padding: 20px 0;
+}
+.button a{
+	background:rgb(122, 167, 43);
+	font-size:13px;
+	color: #fff;
+	padding:12px 10px;
+	font-weight: bold;
+}
+.button a:hover{
+	border:1px solid rgb(122, 167, 43);
+	background: #fff;
+	color:rgb(122, 167, 43);
+}
+.cnt-btm{
+	background:url('../images/bg-btm.jpg');
+	padding:10px;
+	font-size:20px;
+	text-transform:capitalize;
+}
+.left{
+	float: left;
+}
+.right{
+	float:right;
+}
+span a{
+	color: rgb(122, 167, 43);
+}
+span a:hover{
+	color: #555;
+}
+/*footer*/
+.ftr-bg{
+	background: rgb(126, 131, 114) url('../images/f-bg.png');
+}
+/*  GRID OF THREE   ============================================================================= */
+.grid_1_of_3:first-child{
+	margin-top: 0;
+}
+.grid_1_of_3{
+	margin-top: 10px;
+}
+.grid_1_of_3:first-child { 
+	margin-left: 0; 
+} 
+.images_1_of_3  img {
+	max-width:100%;
+	display:block;
+}
+.images_1_of_3 p{
+	margin-top:10px;
+	line-height: 1.4em;
+}
+.images_1_of_3 h2{
+	font-size:20px;
+	text-transform:capitalize;
+}
+/*footer*/
+.f-nav{
+	margin-top: 10px;
+}
+.f-nav li{
+	display:inline-block;
+	margin-right:4px;
+	margin-bottom:10px;
+	background: #333;
+}
+.f-nav li a{
+	padding:10px;	
+	display:block;
+	color: #fff;
+}
+.f-nav li a:hover{
+	color: rgb(122, 167, 43);
+}
+.f-img{
+	float:left;
+	width: 30.33%;
+}
+.f-img img{
+	vertical-align: middle;
+	margin-top:6px;
+}
+.f-para{
+	margin-left:10px;
+	float: left;
+	width: 60.33%;
+}
+.f-para  p a{
+	color:#555;
+	text-align:justify;
+}
+.f-para  p a:hover{
+	color:  rgb(122, 167, 43);
+}
+/*footer1*/
+.footer1{
+	text-align:center;
+	padding: 20px 0;
+}
+.footer1 p.w3-link a{
+	color: rgb(122, 167, 43);
+}
+.footer1 p.w3-link a:hover{
+	text-decoration:underline;
+}
+/*about*/
+/*  GRID OF Content With Image and Sidebar   ============================================================================= */
+.image {
+	clear: both;
+	background:#F0F0F0;
+	padding:1.5%;
+}
+.images_3_of_2  img {
+	margin-top:6px;
+	text-align:center;
+}
+.span_3_of_2  h3{
+	color: rgb(122, 167, 43);
+	margin-bottom:0.3em;
+	font-size:18px;
+}
+.span_3_of_2  p  {
+	text-align:justify;
+	line-height: 1.4em;
+}
+.span_3_of_2 .button{
+	margin-top:.3em;
+	line-height:1.9em;
+}
+.grid:first-child {
+	margin-left: 0;
+}
+.grid {
+	text-align:center;
+}
+/*content*/
+.content-bg{
+	background:rgba(153, 160, 135, 0.55)  url('../images/f-bg.png');
+}
+h2{
+	font-size:20px;
+}
+.nav1 li{
+	display:block;
+}
+.nav1 li:before{
+		content: url('../images/arrow.png');
+}
+.nav1 li a{
+	display:inline;
+	color: #555;
+	line-height: 2.4em;
+	margin-left: 10px;
+}
+.nav1 li a:hover{
+	color: rgb(122, 167, 43);
+}
+.rightsidebar h2{
+	color: rgb(122, 167, 43);
+	text-transform:capitalize;
+}
+.content h2 span{
+	color: rgb(122, 167, 43);
+}
+/*end content*/
+/*contact*/
+/*  Contact Form  ============================================================================= */
+.contact-form{
+	position:relative;
+	padding-bottom:30px;
+}
+.contact-form h2{
+	margin-top: 10px;
+}
+.contact-form div{
+	padding:5px 0;
+}
+.contact-form span{
+	display:block;
+	font-size:13px;
+	padding-bottom:5px;
+}
+.contact-form input[type="text"],.contact-form textarea{
+    padding:8px;
+	display:block;
+	width:92%;
+	background:rgba(255, 255, 255, 0.26);
+	border: none;
+	outline:none;
+	color:#464646;
+	font-size:13px;
+	-webkit-appearance:none;
+}
+.contact-form textarea{
+	resize:none;
+	height:120px;		
+}
+.contact-form input[type="submit"]{
+	padding:7px 20px;
+	color:#FFF;
+	cursor:pointer;
+	background:#555 url('../images/large-button-overlay.png');
+	border: 1px solid rgba(0, 0, 0, 0.25);
+	position:absolute;
+    right:0;
+}
+.contact-form input[type="submit"]:hover{
+	background-color:rgb(148, 206, 48);
+}
+.contact-form input[type="submit"]:active{
+	background-color:rgb(167, 219, 57);  
+}
+.company_address{
+	padding-top:26px;
+}
+.company_address p{
+	color: #555;
+}
+.company_address p span{
+	text-decoration:underline;
+	color:#555;
+	cursor:pointer;
+}
+.map{
+	border:1px solid #C7C7C7;
+	margin-top:10px;
+}
+.contact-form form{
+	margin-top: 10px;
+}
+.company_address h2{
+	color:rgb(122, 167, 43);
+}
+/*details*/
+.det-pic{
+	text-align:center;
+	margin-top: 6px;
+}
+.det-para{
+	margin-top: 10px;
+}
+.det-para p{
+	text-align:justify;
+	line-height: 1.4em;
+}
+/*404*/
+.page{
+	text-align:center;
+}
+.page h3{
+	font-size:6em;
+}

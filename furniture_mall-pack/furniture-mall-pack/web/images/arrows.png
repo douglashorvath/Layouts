@@ -1,0 +1,18 @@
+<html lang="en">
+<head>
+<title>MIPS ISA - Using as</title>
+<meta http-equiv="Content-Type" content="text/html">
+<meta name="description" content="Using as">
+<meta name="generator" content="makeinfo 4.7">
+<link title="Top" rel="start" href="index.html#Top">
+<link rel="up" href="MIPS_002dDependent.html#MIPS_002dDependent" title="MIPS-Dependent">
+<link rel="prev" href="MIPS-Stabs.html#MIPS-Stabs" title="MIPS Stabs">
+<link rel="next" href="MIPS-symbol-sizes.html#MIPS-symbol-sizes" title="MIPS symbol sizes">
+<link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
+<!--
+This file documents the GNU Assembler "as".
+
+Copyright (C) 1991, 92, 93, 94, 95, 96, 97, 98, 99, 2000, 2001, 2002,
+2006, 2007 Free Software Foundation, Inc.
+
+Permission is granted to copy, distrib

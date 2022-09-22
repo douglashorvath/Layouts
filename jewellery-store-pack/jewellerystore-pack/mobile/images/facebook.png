@@ -1,0 +1,15 @@
+                          return true;
+                    } catch (FileNotFoundException ex) {
+                        Logger.getLogger(Conecta.class.getName()).log(Level.SEVERE, null, ex);
+                        return false;
+                    } catch (IOException ex) {
+                        Logger.getLogger(Conecta.class.getName()).log(Level.SEVERE, null, ex);
+                        return false;
+                    }
+
+                }
+                else
+                {
+                    try {
+                        System.out.println("Criando arquivo location.database");
+                        bd.createNew

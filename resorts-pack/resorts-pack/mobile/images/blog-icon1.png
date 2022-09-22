@@ -1,0 +1,99 @@
+  };
+
+    };
+
+    /**
+     * Add a new row to the list of files
+     */
+    this.addListRow = function( element ){
+
+/*
+        // Row div
+        var new_row = document.createElement( 'div' );
+*/
+
+        // Sort order input
+        var new_row_input = document.createElement( 'input' );
+        new_row_input.type = 'text';
+        new_row_input.name = 'general[position_new][]';
+        new_row_input.size = '3';
+        new_row_input.value = '0';
+
+        // Delete button
+        var new_row_button = document.createElement( 'input' );
+        new_row_button.type = 'checkbox';
+        new_row_button.value = 'Delete';
+
+        var new_row_span = document.createElement( 'span' );
+        new_row_span.innerHTML = this.delete_text;
+
+        table = this.list_target;
+
+        // no of rows in the table:
+        noOfRows = table.rows.length;
+
+        // no of columns in the pre-last row:
+        noOfCols = table.rows[noOfRows-2].cells.length;
+
+        // insert row at pre-last:
+        var x=table.insertRow(noOfRows-1);
+
+        // insert cells in row.
+        for (var j = 0; j < noOfCols; j++) {
+
+            newCell = x.insertCell(j);
+            newCell.align = "center";
+            newCell.valign = "middle";
+
+//            if (j==0) {
+//                newCell.innerHTML = this.new_element_html.replace(/%file%/g, element.value).replace(/%id%/g, this.id).replace(/%j%/g, j)
+//                    + this.new_file_input.replace(/%file%/g, element.value).replace(/%id%/g, this.id).replace(/%j%/g, j);
+//            }
+            if (j==3) {
+                newCell.appendChild( new_row_input );
+            }
+            else if (j==4) {
+                newCell.appendChild( new_row_button );
+            }
+            else {
+//                newCell.innerHTML = this.new_file_input.replace(/%file%/g, element.value).replace(/%id%/g, this.id).replace(/%j%/g, j);
+                newCell.innerHTML = this.new_file_input.replace(/%id%/g, this.id).replace(/%j%/g, j);
+            }
+
+//            newCell.innerHTML="NEW CELL" + j;
+
+        }
+
+        // References
+//		new_row.element = element;
+
+        // Delete function
+        new_row_button.onclick= function(){
+
+            // Remove element from form
+            this.parentNode.element.parentNode.removeChild( this.parentNode.element );
+
+            // Remove this row from the list
+            this.parentNode.parentNode.removeChild( this.parentNode );
+
+            // Decrement counter
+            this.parentNode.element.multi_selector.count--;
+
+            // Re-enable input element (if it's disabled)
+            this.parentNode.element.multi_selector.current_element.disabled = false;
+
+            // Appease Safari
+            //    without it Safari wants to reload the browser window
+            //    which nixes your already queued uploads
+            return false;
+        };
+
+        // Set row value
+//		new_row.innerHTML = this.new_element_html.replace(/%file%/g, element.value).replace(/%id%/g, this.id);
+
+        // Add button
+//		new_row.appendChild( new_row_button );
+//		new_row.appendChild( new_row_span );
+
+        // Add it to the list
+//		this.list_

@@ -1,0 +1,88 @@
+
+     * @return TRUE para inserido ou FALSE para erros
+     */
+    public boolean update()
+    {
+        if(nome == null || "".equals(nome) || id < 0)
+        {
+            return false;
+        }
+        else
+        {
+            String sql = "UPDATE PACIENTES SET "
+                    + "NOME = '"+this.nome.toUpperCase()+"', "
+                    + "CPF = '"+this.cpf.toUpperCase()+"', "
+                    + "RUA = '"+this.rua.toUpperCase()+"', "
+                    + "NUMERO = "+this.numero +", "
+                    + "BAIRRO = '"+this.bairro.toUpperCase()+"', "
+                    + "CIDADE = '"+this.cidade.toUpperCase()+"', "
+                    + "ESTADO = '"+this.estado.toUpperCase()+"', "
+                    + "CEP = '"+this.cep+"', "
+                    + "COD_EXTERNO = "+this.cod_externo 
+                    
+                    + "WHERE ID = "+this.id;
+            Conecta con = new Conecta();
+            if(con.executa(sql))
+            {
+                con.Desconecta();
+                return true;
+            }
+            else
+            {
+                con.Desconecta();
+                return false;
+            }
+        }
+    }
+    
+    /**
+     * Deleta o paciente do banco de dados
+     * @return TRUE para inserido ou FALSE para erros
+     */
+    public boolean delete()
+    {
+        if(id < 0)
+        {
+            return false;
+        }
+        else
+        {
+            String sql = "DELETE FROM PACIENTES WHERE ID = "+this.id;
+            Conecta con = new Conecta();
+            if(con.executa(sql))
+            {
+                con.Desconecta();
+                return true;
+            }
+            else
+            {
+                con.Desconecta();
+                return false;
+            }
+        }
+    }
+    
+    /**
+     * Resgata um paciente no banco de dados
+     * @param id id do pacinte à ser resgatado
+     * @return Classe com o paciente resgatado ou null para caso não encontre
+     */
+    public static final Paciente getPaciente(int id)
+    {
+        if(id < 0)
+        {
+            return null;
+        }
+        else
+        {
+            String sql = "SELECT * FROM PACIENTES WHERE ID = "+id;
+            Conecta con = new Conecta();
+            ResultSet rs = con.consulta(sql);
+            try {
+                if(rs.next())
+                {
+                    Paciente p = new Paciente();
+                    p.setId(id);
+                    p.setNome(rs.getString("NOME"));
+                    p.setCpf(rs.getString("CPF"));
+                    p.setRua(rs.getString("RUA"));
